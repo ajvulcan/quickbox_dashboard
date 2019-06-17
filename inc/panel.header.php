@@ -259,7 +259,7 @@
     setTimeout(GetData, updateInterval);
   });
   </script>
-  
+
 <script type="text/javascript" src="inc/panel.app_status.ajax.js"></script>
 
 <script type="text/javascript">
