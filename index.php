@@ -6,7 +6,7 @@
 
   <div class="mainpanel">
     <!--<div class="pageheader">
-      <h2><i class="fa fa-home"></i> Dashboard</h2>
+      <h2><i class="fa fa-home"></i> Panel de Control</h2>
     </div>-->
     <div class="contentpanel">
 
@@ -98,6 +98,24 @@
                 </div>
               </div><!-- panel -->
             </div><!-- SERVER LOAD WIDGET -->
+	      <div class="col-sm-12">
+              <div class="panel panel-side panel-inverse">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><?php echo T('CPU_STATUS'); ?></h4>
+                </div>
+                <div class="panel-body" style="overflow:hidden">
+                  <div style="padding:0;margin:-15px -30 -15px -15px">
+                    <div id="flot-placeholder1" style="width:100%;height:200px;"></div>
+                    <!--div id="metercpu"></div-->
+                  </div>
+                  <hr />
+                  <span class="nomargin" style="font-size:14px">
+                    <?php echo $sysInfo['cpu']['model'];?><br/>
+                    [<span style="color:#999;font-weight:600">x<?php echo $sysInfo['cpu']['num']; ?></span> core]
+                  </span>
+                </div>
+              </div>
+            </div><!-- CPU WIDGET -->
             <div class="col-sm-12">
               <div class="panel panel-side panel-inverse">
                 <div class="panel-heading">
@@ -118,25 +136,7 @@
                 </div>
               </div>
             </div><!-- RAM WIDGET -->
-            <div class="col-sm-12">
-              <div class="panel panel-side panel-inverse">
-                <div class="panel-heading">
-                  <h4 class="panel-title"><?php echo T('CPU_STATUS'); ?></h4>
-                </div>
-                <div class="panel-body" style="overflow:hidden">
-                  <div style="padding:0;margin:-15px -30 -15px -15px">
-                    <div id="flot-placeholder1" style="width:100%;height:200px;"></div>
-                    <!--div id="metercpu"></div-->
-                  </div>
-                  <hr />
-                  <span class="nomargin" style="font-size:14px">
-                    <?php echo $sysInfo['cpu']['model'];?><br/>
-                    [<span style="color:#999;font-weight:600">x<?php echo $sysInfo['cpu']['num']; ?></span> core]
-                  </span>
-                </div>
-              </div>
-            </div><!-- CPU WIDGET -->
-            <?php if ($username == "$master" && file_exists("/install/.foo.lock")) { ?>
+            <--?php if ($username == "$master" && file_exists("/install/.foo.lock")) { ?-->
               <div class="col-sm-12">
                 <div id="project-commits" class="panel panel-inverse">
                   <div class="panel-heading">
@@ -158,7 +158,7 @@
                   </div>
                 </div>
               </div><!-- QUICKBOX UPDATE WIDGET -->
-            <?php } ?>
+            <--?php } ?-->
           </div><!-- row -->
         </div>
       </div>
