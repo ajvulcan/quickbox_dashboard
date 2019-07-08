@@ -6,7 +6,7 @@
 
   <div class="mainpanel">
     <!--<div class="pageheader">
-      <h2><i class="fa fa-home"></i> Dashboard</h2>
+      <h2><i class="fa fa-home"></i> Panel de Control</h2>
     </div>-->
     <div class="contentpanel">
 
@@ -98,6 +98,24 @@
                 </div>
               </div><!-- panel -->
             </div><!-- SERVER LOAD WIDGET -->
+	      <div class="col-sm-12">
+              <div class="panel panel-side panel-inverse">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><?php echo T('CPU_STATUS'); ?></h4>
+                </div>
+                <div class="panel-body" style="overflow:hidden">
+                  <div style="padding:0;margin:-15px -30 -15px -15px">
+                    <div id="flot-placeholder1" style="width:100%;height:200px;"></div>
+                    <!--div id="metercpu"></div-->
+                  </div>
+                  <hr />
+                  <span class="nomargin" style="font-size:14px">
+                    <?php echo $sysInfo['cpu']['model'];?><br/>
+                    [<span style="color:#999;font-weight:600">x<?php echo $sysInfo['cpu']['num']; ?></span> core]
+                  </span>
+                </div>
+              </div>
+            </div><!-- CPU WIDGET -->
             <div class="col-sm-12">
               <div class="panel panel-side panel-inverse">
                 <div class="panel-heading">
@@ -118,47 +136,6 @@
                 </div>
               </div>
             </div><!-- RAM WIDGET -->
-            <div class="col-sm-12">
-              <div class="panel panel-side panel-inverse">
-                <div class="panel-heading">
-                  <h4 class="panel-title"><?php echo T('CPU_STATUS'); ?></h4>
-                </div>
-                <div class="panel-body" style="overflow:hidden">
-                  <div style="padding:0;margin:-15px -30 -15px -15px">
-                    <div id="flot-placeholder1" style="width:100%;height:200px;"></div>
-                    <!--div id="metercpu"></div-->
-                  </div>
-                  <hr />
-                  <span class="nomargin" style="font-size:14px">
-                    <?php echo $sysInfo['cpu']['model'];?><br/>
-                    [<span style="color:#999;font-weight:600">x<?php echo $sysInfo['cpu']['num']; ?></span> core]
-                  </span>
-                </div>
-              </div>
-            </div><!-- CPU WIDGET -->
-            <?php if ($username == "$master" && file_exists("/install/.foo.lock")) { ?>
-              <div class="col-sm-12">
-                <div id="project-commits" class="panel panel-inverse">
-                  <div class="panel-heading">
-                    <h4 class="panel-title text-success"><?php echo T('RECENT_UPDATES'); ?>
-
-                        <a href="https://github.com/QuickBox/QB/compare/<?php echo $version ?>...master" target="blank" title="<?php echo T('CURRENT_VERSIONS_CHANGELOG'); ?>" data-placement="top" class="label label-primary tooltips" style="font-size:10px; padding-top:0; padding-bottom:0px; top: -2px; position: relative;" target='_blank'>QuickBox :: <span style="color: #fff;text-shadow: 0px 0px 6px #fff;"><?php echo "$version"; ?></span></a>
-
-                    </h4>
-                  </div>
-                  <div class="panel-body ps-container" style="max-height: 350px; padding: 0;">
-                    <div class="alert alert-default" style="margin-bottom: 4px; text-align: center" role="alert">
-                      <?php echo T('QUICKBOX_COMMIT'); ?> - <code><a href="https://github.com/QuickBox/QB/commit/<?php echo shell_exec('git -C /etc/QuickBox/.git/ show --oneline -s | head -n 5 | cut -d\  -f 1;'); ?>" target="_blank" title="<?php echo T('CURRENT_COMMIT'); ?>" data-placement="top" class="tooltips"><?php echo shell_exec('git -C /etc/QuickBox/.git/ show --oneline -s | head -n 5 | cut -d\  -f 1;'); ?></a> ... <a href="https://github.com/QuickBox/QB/compare/<?php echo shell_exec('git -C /etc/QuickBox/.git/ show --oneline -s | head -n 5 | cut -d\  -f 1;'); ?>...<?php if (file_exists('/install/.developer.lock')) { ?>development<?php } else { ?>master<?php } ?>" target="_blank" title="<?php echo T('COMPARE_COMMITS'); ?>" data-placement="top" class="tooltips"><?php echo T('LATEST_COMMIT'); ?></a></code></a><br>
-                      <strong><?php echo T('RECENT_UPDATES_TXT'); ?></strong>
-                    </div>
-                    <div id="activityfeed"></div>
-                  </div>
-                  <div class="panel-footer">
-                  <a href="?updateQuickBox=true" data-toggle="modal" data-target="#sysResponse"><button class="btn btn-success btn-quirk btn-block"><i class="fa fa-bell text-success"></i> <?php echo T('UPDATE'); ?> </button></a>
-                  </div>
-                </div>
-              </div><!-- QUICKBOX UPDATE WIDGET -->
-            <?php } ?>
           </div><!-- row -->
         </div>
       </div>

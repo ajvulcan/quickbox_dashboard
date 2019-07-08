@@ -26,10 +26,11 @@
                       $rtorrentrc = '/home/'.$username.'/.rtorrent.rc';
                       if (file_exists($rtorrentrc)) {
                           $rtorrentrc_data = file_get_contents($rtorrentrc);
-                          $scgiport = search($rtorrentrc_data, 'localhost:', "\n");
+                          //$scgiport = search($rtorrentrc_data, 'localhost:', "\n");
+                          $scgiport = search($rtorrentrc_data, 'network.scgi.open_local = ', "\n");
                       }
                       ?>
-                      <td><span id="appstat_rtorrent"></span> RTorrent <span class="tooltips" data-toggle="tooltip" title="scgi_port: <?php echo $scgiport; ?>" data-placement="right"><i class="tooltips fa fa-usb"></i><span></td>
+                      <td><span id="appstat_rtorrent"></span> RTorrent <span class="tooltips" data-toggle="tooltip" title="scgi_port <> unix host: <?php echo $scgiport; ?>" data-placement="right"><i class="tooltips fa fa-usb"></i><span></td>
                       <td class="text-center"><a href="javascript:;" onclick="location.href='?id=88&servicestart=rtorrent'" class="btn btn-xs btn-default"><i class="fa fa-refresh text-info"></i> <?php echo T('REFRESH'); ?></a></td>
                       <td class="text-center"><?php echo "$cbodyr"; ?></td>
                     </tr>

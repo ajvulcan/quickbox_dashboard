@@ -9365,16 +9365,16 @@ blockquote {
   top: 0;
   left: 0;
   right: 0;
-  height: 64px;
+  height: 50px;
   background-color: #292929;
   z-index: 2000;
 }
 .headerpanel .logopanel {
   position: absolute;
-  left: -280px;
-  width: 280px;
-  height: 64px;
-  padding: 6px 15px;
+  left: -250px;
+  width: 250px;
+  height: 50px;
+  /*padding: 6px 15px;*/
   background-color: #222;
   text-align: center;
 }
@@ -9397,18 +9397,18 @@ blockquote {
 }
 .headerbar {
   position: relative;
-  padding-left: 64px;
+  padding-left: 50px;
 }
 @media (min-width: 992px) {
   .headerbar {
-    margin-left: 280px;
+    margin-left: 250px;
     left: 0 !important;
   }
 }
 .menutoggle {
   position: absolute;
   width: 64px;
-  height: 64px;
+  height: 50px;
   top: 0;
   left: 0;
   font-size: 21px;
@@ -9483,7 +9483,7 @@ blockquote {
   border-radius: 0;
   background-color: transparent;
   color: #fff;
-  height: 64px;
+  height: 50px;
   border: 0;
   padding-left: 5px;
   padding-right: 5px;
@@ -9523,7 +9523,7 @@ blockquote {
   .headermenu > li > .btn-group > .btn-notice + .dropdown-menu {
     min-width: 0;
     position: fixed;
-    top: 64px;
+    top: 50px;
     right: 0;
     left: 0;
     bottom: 0;
@@ -9837,11 +9837,11 @@ blockquote {
 /************ LEFT PANEL ***********/
 .leftpanel {
   background-color: #2a2a2a;
-  width: 280px;
+  width: 250px;
   position: fixed;
-  top: 64px;
+  top: 50px;
   bottom: 0;
-  left: -280px;
+  left: -250px;
   z-index: 100;
   overflow-y: auto;
   overflow-x: hidden;
@@ -10518,7 +10518,7 @@ blockquote {
 }
 .sidebar {
   position: absolute;
-  top: 64px;
+  top: 50px;
   bottom: 0;
   padding: 15px;
 }
@@ -10529,7 +10529,7 @@ blockquote {
   right: 0;
 }
 .sidebar.email {
-  width: 280px;
+  width: 250px;
   background-color: #fff;
 }
 .sidebar-title {
@@ -11977,11 +11977,11 @@ blockquote {
 }
 /***** MAIN PANEL *****/
 .mainpanel {
-  padding-top: 64px;
+  padding-top: 50px;
 }
 @media (min-width: 992px) {
   .mainpanel {
-    margin-left: 280px;
+    margin-left: 250px;
   }
 }
 @media (max-width: 991px) {
@@ -13135,7 +13135,7 @@ fieldset[disabled] .btn-fb.active {
 }
 .email-options {
   position: fixed;
-  top: 64px;
+  top: 50px;
   left: 0;
   width: 360px;
   padding: 12px 15px;
@@ -13143,7 +13143,7 @@ fieldset[disabled] .btn-fb.active {
 }
 @media (min-width: 992px) {
   .email-options {
-    left: 280px;
+    left: 250px;
   }
 }
 @media (max-width: 768px) {
@@ -13199,7 +13199,7 @@ fieldset[disabled] .btn-fb.active {
 }
 .emailcontent {
   position: fixed;
-  top: 64px;
+  top: 50px;
   left: 0;
   bottom: 0;
   width: 360px;
@@ -13209,7 +13209,7 @@ fieldset[disabled] .btn-fb.active {
 }
 @media (min-width: 992px) {
   .emailcontent {
-    left: 280px;
+    left: 250px;
   }
 }
 @media (max-width: 768px) {
@@ -13339,7 +13339,7 @@ fieldset[disabled] .btn-fb.active {
 .contentpanel.emailpanel {
   background-color: #fff;
   position: fixed;
-  top: 64px;
+  top: 50px;
   left: 360px;
   bottom: 0;
   right: 0;
@@ -14312,7 +14312,7 @@ fieldset[disabled] .btn-fb.active {
 }
 @media (max-width: 360px) {
   .notfoundpanel form {
-    width: 280px;
+    width: 250px;
   }
 }
 .notfoundpanel .list-inline {
@@ -15130,7 +15130,7 @@ img.grayscale:hover {
   color: #778395;
   cursor: pointer;
   /*font-size: 21px;*/
-  height: 64px;
+  height: 50px;
   left: -20px;
   position: absolute;
   top: 20px;

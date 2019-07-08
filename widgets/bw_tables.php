@@ -4,6 +4,7 @@
 $interface = "INETFACE";
 $iface_list = array('INETFACE');
 $iface_title['INETFACE'] = 'External';
+
 $vnstat_bin = '/usr/bin/vnstat';
 $data_dir = './dumps';
 $byte_notation = null;
