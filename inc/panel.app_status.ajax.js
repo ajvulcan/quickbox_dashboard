@@ -158,7 +158,7 @@ $(document).ready(function() {
   function appstat_lidarr() {
     $.ajax({url: "widgets/app_status/app_status_lidarr.php", cache:true, success: function (result) {
       $('#appstat_lidarr').html(result);
-      setTimeout(function(){appstat_lidarr()}, 1000);
+      if(!GLOBAL.update_hold){ setTimeout(function(){appstat_lidarr()}, 1000); };
     }});
   }
 
