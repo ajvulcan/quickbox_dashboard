@@ -15,9 +15,9 @@ $username = getUser();
 require_once ($_SERVER['DOCUMENT_ROOT'].'/inc/localize.php');
 
 // Network Interface
-$interface = eth0;
-$iface_list = array('eth0');
-$iface_title['eth0'] = 'External';
+$interface = INETFACE;
+$iface_list = array('INETFACE');
+$iface_title['INETFACE'] = 'External';
 $vnstat_bin = '/usr/bin/vnstat';
 $data_dir = './dumps';
 $byte_notation = null;

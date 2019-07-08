@@ -46,9 +46,9 @@ $time = microtime(); $time = explode(" ", $time);
 $time = $time[1] + $time[0]; $start = $time;
 
 if (file_exists('/install/.quota.lock')) {
-  $dftotal = shell_exec("sudo /usr/sbin/repquota /home|/bin/grep ^".$username."|/usr/bin/awk '{printf \$4/1024/1024}'");
-  $dffree = shell_exec("sudo /usr/sbin/repquota /home|/bin/grep ^".$username."|/usr/bin/awk '{printf (\$4-\$3)/1024/1024}'");
-  $dfused = shell_exec("sudo /usr/sbin/repquota /home|/bin/grep ^".$username."|/usr/bin/awk '{printf \$3/1024/1024}'");
+  $dftotal = shell_exec("sudo /usr/sbin/repquota /|/bin/grep ^".$username."|/usr/bin/awk '{printf \$4/1024/1024}'");
+  $dffree = shell_exec("sudo /usr/sbin/repquota /|/bin/grep ^".$username."|/usr/bin/awk '{printf (\$4-\$3)/1024/1024}'");
+  $dfused = shell_exec("sudo /usr/sbin/repquota /|/bin/grep ^".$username."|/usr/bin/awk '{printf \$3/1024/1024}'");
   $perused = sprintf('%1.0f', $dfused / $dftotal * 100);
 
 } else {
@@ -66,12 +66,12 @@ if (file_exists('/install/.quota.lock')) {
     exit();
   }
   //hard disk
-  $dftotal = number_format(round(@disk_total_space($location)/(1024*1024*1024),3)); //Total
-  $dffree = number_format(round(@disk_free_space($location)/(1024*1024*1024),3)); //Available
-  $dfused = number_format(round(@disk_total_space($location)/(1024*1024*1024),3)-round(@disk_free_space($location)/(1024*1024*1024),3)); //used
+  $dftotal = number_format(round(@disk_total_space(".")/(1024*1024*1024),3)); //Total
+  $dffree = number_format(round(@disk_free_space(".")/(1024*1024*1024),3)); //Available
+  $dfused = number_format(round(@disk_total_space(".")/(1024*1024*1024),3)-round(@disk_free_space(".")/(1024*1024*1024),3)); //used
   //hard disk for percentages
-  $dptotal = round(@disk_total_space($location)/(1024*1024*1024),3); //Total
-  $dpfree = round(@disk_free_space($location)/(1024*1024*1024),3); //Available
+  $dptotal = round(@disk_total_space(".")/(1024*1024*1024),3); //Total
+  $dpfree = round(@disk_free_space(".")/(1024*1024*1024),3); //Available
   $dpused = $dptotal-$dpfree; //used
   $perused = (floatval($dptotal)!=0)?round($dpused/$dptotal*100,2):0;
   //$perused = sprintf('%1.0f', $bytesused / $bytestotal * 100);
