@@ -1,5 +1,9 @@
 <?php
-session_destroy();
+if (isset($_SESSION))
+{
+  session_destroy();
+}
+
 include '/srv/panel/inc/util.php';
 include ($_SERVER['DOCUMENT_ROOT'].'/widgets/class.php');
 $version = "v1.2.0";
@@ -238,11 +242,12 @@ function processExists($processName, $username) {
   return $exists;
 }
 
+$bazarr = processExists("bazarr",$username);
 $btsync = processExists("resilio-sync",rslsync);
 $deluged = processExists("deluged",$username);
 $delugedweb = processExists("deluge-web",$username);
 $emby = processExists("emby-server",$username);
-$emby = processExists("flood",$username);
+$flood = processExists("flood",$username);
 $headphones = processExists("headphones",$username);
 $irssi = processExists("irssi",$username);
 $lounge = processExists("lounge",lounge);
@@ -268,6 +273,7 @@ $shellinabox = processExists("shellinabox",shellinabox);
 $csf = processExists("lfd",root);
 $sickgear = processExists("sickgear",$username);
 $znc = processExists("znc",$username);
+$lidarr = processExists("lidarr",$username);
 
 function isEnabled($process, $username){
   $service = $process;
@@ -283,6 +289,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   include ($_SERVER['DOCUMENT_ROOT'].'/custom/url.override.php');
   // END CUSTOM URL OVERRIDES ////
 } else {
+  $bazarrURL = "http://" . $_SERVER['HTTP_HOST'] . "/bazarr";
   $btsyncURL = "http://" . $_SERVER['HTTP_HOST'] . ":8888/gui/";
   $cpURL = "https://" . $_SERVER['HTTP_HOST'] . "/couchpotato";
   $csfURL = "https://" . $_SERVER['HTTP_HOST'] . ":3443";
@@ -310,6 +317,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $sonarrURL = "https://" . $_SERVER['HTTP_HOST'] . "/sonarr";
   $subsonicURL = "https://" . $_SERVER['HTTP_HOST'] . "/subsonic";
   $syncthingURL = "https://" . $_SERVER['HTTP_HOST'] . "/syncthing/";
+  $lidarrURL = "http://" . $_SERVER['HTTP_HOST'] . "/lidarr";
   if ($zssl == "true") { $zncURL = "https://" . $_SERVER['HTTP_HOST'] . ":$zport"; }
   if ($zssl == "false") { $zncURL = "http://" . $_SERVER['HTTP_HOST'] . ":$zport"; }
  }
@@ -335,6 +343,8 @@ case 0:
     $cbodydw .= $delugedweb;
   $shellinabox = isEnabled("shellinabox",shellinabox);
     $wcbodyb .= $shellinabox;
+  $bazarr = isEnabled("bazarr",$username);
+    $cbodybaz .= $bazarr;
   $btsync = isEnabled("resilio-sync",rslsync);
     $cbodyb .= $btsync;
   $couchpotato = isEnabled("couchpotato", $username);
@@ -347,6 +357,8 @@ case 0:
     $cbodyhp .= $headphones;
   $jackett = isEnabled("jackett", $username);
     $cbodyj .= $jackett;
+  $lidarr = isEnabled("lidarr", $username);
+    $cbodylidarr .= $lidarr;
   $lounge = isEnabled("lounge", lounge);
     $cbodylounge .= $lounge;
   $medusa = isEnabled("medusa", $username);
