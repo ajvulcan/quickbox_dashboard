@@ -3,8 +3,8 @@
 $interface = "INETFACE";
 
 session_start();
-$rx[] = @file_get_contents("/sys/class/net/eth0/statistics/rx_bytes");
-$tx[] = @file_get_contents("/sys/class/net/eth0/statistics/tx_bytes");
+$rx[] = @file_get_contents("/sys/class/net/INETFACE/statistics/rx_bytes");
+$tx[] = @file_get_contents("/sys/class/net/INETFACE/statistics/tx_bytes");
 sleep(1);
 
 $rx[] = @file_get_contents("/sys/class/net/INETFACE/statistics/rx_bytes");
@@ -37,7 +37,7 @@ if (count($_SESSION['rx'])>60)
 // # json_encode didnt work, if you found a workarround pls write m
 //echo json_encode($data, JSON_FORCE_OBJECT);
 
-echo '[ { "data":['.implode($_SESSION['rx'], ",").'],"label": "Download"}, ';
-echo '{ "data":['.implode($_SESSION['tx'], ",").'],"label": "Upload"} ';
+echo '[ { "data":['.implode($_SESSION['rx'], ",").'],"label": "Descarga"}, ';
+echo '{ "data":['.implode($_SESSION['tx'], ",").'],"label": "Subida"} ';
 echo ']';
 ?>
