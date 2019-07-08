@@ -11,9 +11,9 @@ $username = getUser();
 require_once ($_SERVER['DOCUMENT_ROOT'].'/inc/localize.php');
 
 // Network Interface
-$interface = INETFACE;
-$iface_list = array('INETFACE');
-$iface_title['INETFACE'] = 'External';
+$interface = eth0;
+$iface_list = array('eth0');
+$iface_title['eth0'] = 'External';
 $vnstat_bin = '/usr/bin/vnstat';
 $data_dir = './dumps';
 $byte_notation = null;
@@ -108,8 +108,9 @@ function sys_linux()
       $x1 = '';
     else
       $x1 = ' ×'.$res['cpu']['num'];
-    $mhz[1][0] = ' <span style="color:#999;font-weight:600">Frequency:</span> '.$mhz[1][0];
-    $cache[1][0] = ' <br /> <span style="color:#999;font-weight:600">Secondary cache:</span> '.$cache[1][0];
+    //$mhz[1][0] = ' <span style="color:#999;font-weight:600">Frecuencia (Mhz):</span> '.$mhz[1][0];
+    $mhz[1][0] = ' <span style="color:#999;font-weight:600">Frecuencia (Mhz):</span><span id="freq_actual"></span>';
+    $cache[1][0] = ' <br /> <span style="color:#999;font-weight:600">Cache secundaria:</span> '.$cache[1][0];
     $res['cpu']['model'][] = '<h4>'.$model[1][0].'</h4>'.$mhz[1][0].$cache[1][0].$x1;
         if (false !== is_array($res['cpu']['model'])) $res['cpu']['model'] = implode("<br />", $res['cpu']['model']);
         if (false !== is_array($res['cpu']['mhz'])) $res['cpu']['mhz'] = implode("<br />", $res['cpu']['mhz']);

@@ -22,6 +22,22 @@ $loads = sys_getloadavg();
 $core_nums = trim(shell_exec("grep -P '^processor' /proc/cpuinfo|wc -l"));
 $load = round($loads[0]/($core_nums + 1)*100, 2);
 
+//Incluimos frecuencia en tiempo real
+if (false === ($str = @file("/proc/cpuinfo"))) return false;
+$str = implode("", $str);
+
+$frecuencias = trim(shell_exec("sed -n 's/cpu MHz.*://p' /proc/cpuinfo"));
+$freq_array = explode(" ",$frecuencias); //slip de la cadena en un array
+$tam = count($freq_array); //tamaño del array
+
+$resultado = 0;
+
+for($i=0; $i < $tam ; $i++){
+	$resultado = $resultado + $freq_array[$i];
+}
+
+$resultado = $resultado / $tam; //media aritmética
+
 ?>
 
-{"cpu":<?php echo "$load"; ?>}
+{"cpu":<?php echo "$load"; ?>, "cpu_media":<?php echo "$resultado"; ?>}

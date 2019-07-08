@@ -149,6 +149,7 @@ function fetchData() {
   var totalPoints = 100;
   var updateInterval = 30;
   var now = new Date().getTime();
+  var media_cpu = 0;
   var options = {
     series: {
       lines: {
@@ -251,12 +252,21 @@ function fetchData() {
       cpu.shift();
       now = new Date().getTime();
       temp = [now, _data.cpu];
+      media_cpu = _data.cpu_media;
+	//$('#freq_actual').html(media_cpu);
       cpu.push(temp);
       dataset = [
         { label: "CPU:" + _data.cpu + "%", data: cpu, lines: { fill: 0.2, lineWidth: 1.5 }, color: "#B0A4BE" }
       ];
       $.plot($("#flot-placeholder1"), dataset, options);
+      temp = [now, _data.cpu_media];
+      $()
       if(!GLOBAL.update_hold){ setTimeout(GetData, updateInterval); }
+  }
+  function act_cpu_freq(){
+	//Actualiza la media de frecuencia de CPU
+    $('#freq_actual').html(media_cpu);
+    if(!GLOBAL.update_hold){ setTimeout(act_cpu_freq, 2000); };
   }
   $(document).ready(function () {
     initData();
@@ -264,7 +274,8 @@ function fetchData() {
       { label: "CPU", data: cpu, lines:{fill:0.2, lineWidth:1}, color: "#B0A4BE" }
     ];
     $.plot($("#flot-placeholder1"), dataset, options);
-    if(!GLOBAL.update_hold){ setTimeout(GetData, updateInterval); }
+    if(!GLOBAL.update_hold){ setTimeout(GetData, updateInterval); };
+    act_cpu_freq();
   });
   </script>
 

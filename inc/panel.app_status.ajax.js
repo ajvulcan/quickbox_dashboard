@@ -38,8 +38,10 @@ $(document).ready(function() {
   bwtables();
   diskstats();
   ramstats();
-  activefeed();
+  //activefeed();
   msgoutput();
+  appstat_bazarr();
+  appstat_lidarr();
 
 });
 
@@ -47,6 +49,22 @@ $(document).ready(function() {
   /////////////////////////////////////////////
   // BEGIN AJAX APP CALLS ON SERVICE STATUS //
   ///////////////////////////////////////////
+
+ // <<-------- BAZARR -------->> //
+  function appstat_bazarr() {
+    $.ajax({url: "widgets/app_status/app_status_bazarr.php", cache:true, success: function (result) {
+      $('#appstat_bazarr').html(result);
+       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_bazarr()}, 1000); };
+    }});
+  }
+
+   // <<-------- LIDARR -------->> //
+  function appstat_lidarr() {
+    $.ajax({url: "widgets/app_status/app_status_lidarr.php", cache:true, success: function (result) {
+      $('#appstat_lidarr').html(result);
+      if(!GLOBAL.update_hold){ setTimeout(function(){appstat_lidarr()}, 1000); }
+    }});
+  }
 
   // <<-------- BTSYNC -------->> //
   function appstat_btsync() {
@@ -388,15 +406,6 @@ $(document).ready(function() {
       if(!GLOBAL.update_hold){ setTimeout(function(){ramstats()}, 1000); };
     }});
   }
-
-
-  function activefeed() {
-    $.ajax({url: "widgets/activity_feed.php", cache:false, success: function (result) {
-      $('#activityfeed').html(result);
-      if(!GLOBAL.update_hold){ setTimeout(function(){activefeed()}, 300000); };
-    }});
-  }
-
 
   function msgoutput() {
     $.ajax({url: "db/output.log", cache:false, success: function (result) {
