@@ -53,10 +53,9 @@ $(document).ready(function() {
   function appstat_bazarr() {
     $.ajax({url: "widgets/app_status/app_status_bazarr.php", cache:true, success: function (result) {
       $('#appstat_bazarr').html(result);
-      setTimeout(function(){appstat_bazarr()}, 1000);
+      if(!GLOBAL.update_hold){ setTimeout(function(){appstat_bazarr()}, 1000); };
     }});
   }
-  appstat_bazarr();
 
  // <<-------- BAZARR -------->> //
   function appstat_bazarr() {
