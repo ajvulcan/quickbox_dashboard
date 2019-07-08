@@ -22,7 +22,7 @@ $(document).ready(function() {
   appstat_pyload();
   appstat_quassel();
   appstat_radarr();
-  appstat_rapidleech();
+  //appstat_rapidleech();
   appstat_rtorrent();
   appstat_sabnzbd();
   appstat_sickgear();
@@ -49,14 +49,6 @@ $(document).ready(function() {
   /////////////////////////////////////////////
   // BEGIN AJAX APP CALLS ON SERVICE STATUS //
   ///////////////////////////////////////////
-  // <<-------- BAZARR -------->> //
-  function appstat_bazarr() {
-    $.ajax({url: "widgets/app_status/app_status_bazarr.php", cache:true, success: function (result) {
-      $('#appstat_bazarr').html(result);
-      setTimeout(function(){appstat_bazarr()}, 1000);
-    }});
-  }
-  appstat_bazarr();
 
  // <<-------- BAZARR -------->> //
   function appstat_bazarr() {
@@ -151,14 +143,6 @@ $(document).ready(function() {
     $.ajax({url: "widgets/app_status/app_status_jackett.php", cache:true, success: function (result) {
       $('#appstat_jackett').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_jackett()}, 1000); };
-    }});
-  }
-
-  // <<-------- LIDARR -------->> //
-  function appstat_lidarr() {
-    $.ajax({url: "widgets/app_status/app_status_lidarr.php", cache:true, success: function (result) {
-      $('#appstat_lidarr').html(result);
-      if(!GLOBAL.update_hold){ setTimeout(function(){appstat_lidarr()}, 1000); };
     }});
   }
 
@@ -280,12 +264,13 @@ $(document).ready(function() {
 
 
   // <<-------- RAPIDLEECH -------->> //
-  function appstat_rapidleech() {
+/*  function appstat_rapidleech() {
     $.ajax({url: "widgets/app_status/app_status_rapidleech.php", cache:true, success: function (result) {
       $('#appstat_rapidleech').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_rapidleech()}, 1000); };
     }});
   }
+*/
 
 
   // <<-------- RTORRENT -------->> //

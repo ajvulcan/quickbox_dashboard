@@ -18,9 +18,13 @@ function microtime_float() {
   return $mtime[1] + $mtime[0];
 }
 
-$loads = sys_getloadavg();
-$core_nums = trim(shell_exec("grep -P '^processor' /proc/cpuinfo|wc -l"));
-$load = round($loads[0]/($core_nums + 1)*100, 2);
+//Esto se basa en la carga del servidor y su número de micros, no en un uso real de CPU.
+//$loads = sys_getloadavg();
+//$core_nums = trim(shell_exec("grep -P '^processor' /proc/cpuinfo|wc -l"));
+//$load = round($loads[0]/($core_nums + 1)*100, 2);
+
+//Obtengo porcentaje de uso de microprocesador real.
+$load = trim( shell_exec("echo $[100-$(vmstat 1 2|tail -1|awk '{print $15}')]") );
 
 //Incluimos frecuencia en tiempo real
 if (false === ($str = @file("/proc/cpuinfo"))) return false;
