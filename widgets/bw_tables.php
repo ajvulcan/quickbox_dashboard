@@ -1,9 +1,10 @@
 <?php
 
 // Network Interface
-$interface = eth0;
-$iface_list = array('eth0');
-$iface_title['eth0'] = 'External';
+$interface = "INETFACE";
+$iface_list = array('INETFACE');
+$iface_title['INETFACE'] = 'External';
+
 $vnstat_bin = '/usr/bin/vnstat';
 $data_dir = './dumps';
 $byte_notation = null;
@@ -76,14 +77,14 @@ write_data_table_s(T('Summary'), $sum);
 function write_summary_t() {
   global $top;
 
-  $trx = $summary['totalrx']*1024+$summary['totalrxk'];
-  $ttx = $summary['totaltx']*1024+$summary['totaltxk'];
+  /*$trx = $summary['totalrx']*1024+$summary['totalrxk'];
+  $ttx = $summary['totaltx']*1024+$summary['totaltxk'];*/
 
   //
   // let's build array for write_data_table
   //
 
-  $sum = array();
+/*  $sum = array();
 
   if (count($day) > 0 && count($hour) > 0 && count($month) > 0) {
     $sum[0]['act'] = 1;
@@ -105,7 +106,7 @@ function write_summary_t() {
     $sum[3]['label'] = T('All time');
     $sum[3]['rx'] = $trx;
     $sum[3]['tx'] = $ttx;
-  }
+  }*/
 
 write_data_table_t(T('Top 10 days'), $top);
 
@@ -181,7 +182,7 @@ get_vnstat_data();
 
             <div class="col-sm-12" style="padding-left:0;padding-right:0;">
               <div class="table-responsive">
-                <?php $graph_params = "if=$iface&amp;page=$page&amp;style=$style";
+                <?php $graph_params = "if=$iface&amp;page=$page&amp";
                   if ($page == 's') {
                     write_summary_s();
                   } else if ($page == 'h') {
@@ -197,7 +198,7 @@ get_vnstat_data();
 
             <div class="col-sm-12" style="padding-left:0;padding-right:0;">
               <div class="table-responsive">
-                <?php $graph_params = "if=$iface&amp;page=$page&amp;style=$style";
+                <?php $graph_params = "if=$iface&amp;page=$page&amp";
                   if ($page == 's') {
                     write_summary_t();
                   } else if ($page == 'h') {

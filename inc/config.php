@@ -250,6 +250,7 @@ $emby = processExists("emby-server",$username);
 $flood = processExists("flood",$username);
 $headphones = processExists("headphones",$username);
 $irssi = processExists("irssi",$username);
+$lidarr = processExists("lidarr",$username);
 $lounge = processExists("lounge",lounge);
 $nzbget = processExists("nzbget",$username);
 $nzbhydra = processExists("nzbhydra",$username);
@@ -299,6 +300,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $headphonesURL = "https://" . $_SERVER['HTTP_HOST'] . "/headphones/home";
   $jackettURL = "https://" . $_SERVER['HTTP_HOST'] . "/jackett/";
   $loungeURL = "https://" . $_SERVER['HTTP_HOST'] . "/irc";
+  $lidarrURL = "http://" . $_SERVER['HTTP_HOST'] . "/lidarr";
   $medusaURL = "https://" . $_SERVER['HTTP_HOST'] . "/medusa";
   $netdataURL = "https://" . $_SERVER['HTTP_HOST'] . "/netdata/";
   $nextcloudURL = "https://" . $_SERVER['HTTP_HOST'] . "/nextcloud";
