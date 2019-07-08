@@ -34,12 +34,16 @@
   <script type="text/javascript" src="lib/flot/jquery.flot.resize.js"></script>
   <script type="text/javascript" src="lib/flot/jquery.flot.canvas.js"></script>
   <script type="text/javascript" src="lib/flot-spline/jquery.flot.spline.js"></script>
+  <script src="js/window_handler.js"></script>
   <!--script type="text/javascript" src="lib/flot/jquery.flot.axislabels.js"></script-->
 
   <!--///// BANDWIDTH CHART /////-->
   <script id="source" language="javascript" type="text/javascript">
+  var opciones;
+
   $(document).ready(function() {
-    var options = {
+
+   opciones = {
       series: {
         lines: {
           show: false
@@ -107,32 +111,36 @@
       border: { show: false },
       shadowSize: 0
     };
+
     window.onresize = function(event) {
       var data = [];
       var placeholder = $("#mainbw");
-      $.plot(placeholder, data, options);
-        var iteration = 0;
-        function fetchData() {
-          ++iteration;
+      $.plot(placeholder, data, opciones);
+      //var iteration = 0;
+      if(!GLOBAL.update_hold){ setTimeout(fetchData(), 30); } //Lanzamos la recolección de datos.
+    }
+});
+
+function fetchData() {
+          //++iteration
           function onDataReceived(series) {
             // we get all the data in one go, if we only got partial
             // data, we could merge it with what we already got
             data = series;
             var updateInterval = 30;
             var now = new Date().getTime();
-            $.plot($("#mainbw"), data, options);
-          fetchData();
+            $.plot($("#mainbw"), data, opciones);
+            if(!GLOBAL.update_hold){ fetchData(); }
           }
-          $.ajax({
-            url: "widgets/data.php",
-            method: 'GET',
-            dataType: 'json',
-            success: onDataReceived
-          });
-        }
-      setTimeout(fetchData, 30);
-    }
-  });
+           $.ajax({
+             url: "widgets/data.php",
+             method: 'GET',
+             dataType: 'json',
+             success: onDataReceived
+           });
+}
+
+
   </script>
   <!--///// CPU CHART /////-->
   <script id="source" language="javascript" type="text/javascript">
@@ -141,6 +149,7 @@
   var totalPoints = 100;
   var updateInterval = 30;
   var now = new Date().getTime();
+  var media_cpu = 0;
   var options = {
     series: {
       lines: {
@@ -234,7 +243,7 @@
       dataType: 'json',
       success: update,
       error: function () {
-        setTimeout(GetData, updateInterval);
+        if(!GLOBAL.update_hold){ setTimeout(GetData, updateInterval); }
       }
     });
   }
@@ -243,12 +252,21 @@
       cpu.shift();
       now = new Date().getTime();
       temp = [now, _data.cpu];
+      media_cpu = _data.cpu_media;
+	//$('#freq_actual').html(media_cpu);
       cpu.push(temp);
       dataset = [
         { label: "CPU:" + _data.cpu + "%", data: cpu, lines: { fill: 0.2, lineWidth: 1.5 }, color: "#B0A4BE" }
       ];
       $.plot($("#flot-placeholder1"), dataset, options);
-      setTimeout(GetData, updateInterval);
+      temp = [now, _data.cpu_media];
+      $()
+      if(!GLOBAL.update_hold){ setTimeout(GetData, updateInterval); }
+  }
+  function act_cpu_freq(){
+	//Actualiza la media de frecuencia de CPU
+    $('#freq_actual').html(media_cpu);
+    if(!GLOBAL.update_hold){ setTimeout(act_cpu_freq, 2000); };
   }
   $(document).ready(function () {
     initData();
@@ -256,10 +274,11 @@
       { label: "CPU", data: cpu, lines:{fill:0.2, lineWidth:1}, color: "#B0A4BE" }
     ];
     $.plot($("#flot-placeholder1"), dataset, options);
-    setTimeout(GetData, updateInterval);
+    if(!GLOBAL.update_hold){ setTimeout(GetData, updateInterval); };
+    act_cpu_freq();
   });
   </script>
-  
+
 <script type="text/javascript" src="inc/panel.app_status.ajax.js"></script>
 
 <script type="text/javascript">
@@ -274,7 +293,7 @@ var InputSpeed4=<?php echo floor($NetInputSpeed[4]) ?>;
 var InputSpeed5=<?php echo floor($NetInputSpeed[5]) ?>;
 function getJSONData()
 {
-  setTimeout("getJSONData()", 1000);
+  if(!GLOBAL.update_hold){ setTimeout("getJSONData()", 1000); }
   $.getJSON('?act=rt&callback=?', displayData);
 }
 function ForDight(Dight,How)

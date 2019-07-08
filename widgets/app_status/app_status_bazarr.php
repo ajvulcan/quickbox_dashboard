@@ -1,5 +1,4 @@
 <?php
-
 include '/srv/panel/inc/util.php';
 $username = getUser();
 
@@ -13,11 +12,8 @@ function processExists($processName, $username) {
 }
 
 $bazarr = processExists("bazarr",$username);
-
 if ($bazarr == "1") { $bazval = "<span class=\"badge badge-service-running-dot\"></span><span class=\"badge badge-service-running-pulse\"></span>";
 } else { $bazval = "<span class=\"badge badge-service-disabled-dot\"></span><span class=\"badge badge-service-disabled-pulse\"></span>";
 }
-
 echo "$bazval";
-
-?>
+?> 

@@ -1,8 +1,8 @@
 <?php
-    $locale = 'en_GB.UTF-8';
-    $language = 'lang_en';
-    setlocale(LC_ALL, 'en_GB.UTF-8');
-    require ($_SERVER['DOCUMENT_ROOT']."/lang/lang_en");
+    $locale = 'es_ES.UTF-8';
+    $language = 'lang_es';
+    setlocale(LC_ALL, es_ES.UTF-8);
+    require ($_SERVER['DOCUMENT_ROOT']."/lang/lang_es");
 
     function T($str)
     {

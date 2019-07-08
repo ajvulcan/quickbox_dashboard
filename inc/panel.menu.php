@@ -24,7 +24,7 @@
           <li>
             <div id="noticePanel" class="btn-group">
               <button class="btn" data-toggle="dropdown">
-                <i class="fa fa-menu"></i> swizzin Menu <span class="caret"></span>
+                <i class="fa fa-menu"></i> Ajustes <span class="caret"></span>
               </button>
               <div id="noticeDropdown" class="dropdown-menu dm-notice pull-right">
                 <div role="tabpanel">
@@ -146,7 +146,7 @@
 </header>
 <section>
   <div class="leftpanel ps-container">
-    <div class="leftpanelinner">
+  <div class="leftpanelinner">
     <?php if (file_exists('/install/.foo.lock')) { ?>
       <ul class="nav nav-tabs nav-justified nav-sidebar">
         <li class="tooltips active" data-toggle="tooltip" title="<?php echo T('MAIN_MENU'); ?>" data-placement="bottom"><a data-toggle="tab" data-target="#mainmenu"><i class="tooltips fa fa-ellipsis-h"></i></a></li>
@@ -161,7 +161,7 @@
         <div class="tab-pane active" id="mainmenu">
           <h5 class="sidebar-title"><?php echo T('MAIN_MENU'); ?></h5>
           <ul class="nav nav-pills nav-stacked nav-quirk">
-            <!--li class="active"><a href="index.php"><i class="fa fa-home"></i> <span>Dashboard</span></a></li-->
+            <li class="grayscale"><a href="javascript:void(0)"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
             <?php if (file_exists('/install/.rutorrent.lock')) { ?>
               <li><a class="grayscale" href="<?php echo "$rutorrentURL"; ?>" target="_blank"><img src="img/brands/rtorrent.png" class="brand-ico"> <span>ruTorrent</span></a></li>
             <?php } ?>
