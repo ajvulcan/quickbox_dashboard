@@ -22,7 +22,7 @@ $(document).ready(function() {
   appstat_pyload();
   appstat_quassel();
   appstat_radarr();
-  appstat_rapidleech();
+  //appstat_rapidleech();
   appstat_rtorrent();
   appstat_sabnzbd();
   appstat_sickgear();
@@ -49,13 +49,6 @@ $(document).ready(function() {
   /////////////////////////////////////////////
   // BEGIN AJAX APP CALLS ON SERVICE STATUS //
   ///////////////////////////////////////////
-  // <<-------- BAZARR -------->> //
-  function appstat_bazarr() {
-    $.ajax({url: "widgets/app_status/app_status_bazarr.php", cache:true, success: function (result) {
-      $('#appstat_bazarr').html(result);
-      if(!GLOBAL.update_hold){ setTimeout(function(){appstat_bazarr()}, 1000); };
-    }});
-  }
 
  // <<-------- BAZARR -------->> //
   function appstat_bazarr() {
@@ -271,12 +264,13 @@ $(document).ready(function() {
 
 
   // <<-------- RAPIDLEECH -------->> //
-  function appstat_rapidleech() {
+/*  function appstat_rapidleech() {
     $.ajax({url: "widgets/app_status/app_status_rapidleech.php", cache:true, success: function (result) {
       $('#appstat_rapidleech').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_rapidleech()}, 1000); };
     }});
   }
+*/
 
 
   // <<-------- RTORRENT -------->> //
