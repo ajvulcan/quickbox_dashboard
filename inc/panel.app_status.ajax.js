@@ -26,13 +26,15 @@ $(document).ready(function() {
   appstat_rtorrent();
   appstat_sabnzbd();
   appstat_sickgear();
-  appstat_sickrage();
+  appstat_sickchill();
   appstat_sonarr();
   appstat_subsonic();
   appstat_syncthing();
   appstat_webconsole();
   appstat_x2go();
   appstat_znc();
+  appstat_bazarr();
+  appstat_lidarr();
   uptime();
   sload();
   bwtables();
@@ -40,9 +42,6 @@ $(document).ready(function() {
   ramstats();
   //activefeed();
   msgoutput();
-  appstat_bazarr();
-  appstat_lidarr();
-
 });
 
 
@@ -300,11 +299,11 @@ $(document).ready(function() {
   }
 
 
-  // <<-------- SICKRAGE -------->> //
-  function appstat_sickrage() {
-    $.ajax({url: "widgets/app_status/app_status_sickrage.php", cache:true, success: function (result) {
-      $('#appstat_sickrage').html(result);
-      if(!GLOBAL.update_hold){ setTimeout(function(){appstat_sickrage()}, 1000); };
+  // <<-------- sickchill -------->> //
+  function appstat_sickchill() {
+    $.ajax({url: "widgets/app_status/app_status_sickchill.php", cache:true, success: function (result) {
+      $('#appstat_sickchill').html(result);
+      if(!GLOBAL.update_hold){ setTimeout(function(){appstat_sickchill()}, 1000); };
     }});
   }
 

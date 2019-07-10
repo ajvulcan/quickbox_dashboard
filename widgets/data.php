@@ -1,14 +1,14 @@
 <?php
 
-$interface = "INETFACE";
+$interface = "eth0";
 
 session_start();
-$rx[] = @file_get_contents("/sys/class/net/INETFACE/statistics/rx_bytes");
-$tx[] = @file_get_contents("/sys/class/net/INETFACE/statistics/tx_bytes");
+$rx[] = @file_get_contents("/sys/class/net/eth0/statistics/rx_bytes");
+$tx[] = @file_get_contents("/sys/class/net/eth0/statistics/tx_bytes");
 sleep(1);
 
-$rx[] = @file_get_contents("/sys/class/net/INETFACE/statistics/rx_bytes");
-$tx[] = @file_get_contents("/sys/class/net/INETFACE/statistics/tx_bytes");
+$rx[] = @file_get_contents("/sys/class/net/eth0/statistics/rx_bytes");
+$tx[] = @file_get_contents("/sys/class/net/eth0/statistics/tx_bytes");
 settype($rx[], "integer");
 settype($tx[], "integer");
 

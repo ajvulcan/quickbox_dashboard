@@ -15,9 +15,9 @@ $username = getUser();
 require_once ($_SERVER['DOCUMENT_ROOT'].'/inc/localize.php');
 
 // Network Interface
-$interface = INETFACE;
-$iface_list = array('INETFACE');
-$iface_title['INETFACE'] = 'External';
+$interface = eth0;
+$iface_list = array('eth0');
+$iface_title['eth0'] = 'External';
 $vnstat_bin = '/usr/bin/vnstat';
 $data_dir = './dumps';
 $byte_notation = null;
@@ -246,7 +246,7 @@ $bazarr = processExists("bazarr",$username);
 $btsync = processExists("resilio-sync",rslsync);
 $deluged = processExists("deluged",$username);
 $delugedweb = processExists("deluge-web",$username);
-$emby = processExists("emby-server",$username);
+$emby = processExists("EmbyServer",emby);
 $flood = processExists("flood",$username);
 $headphones = processExists("headphones",$username);
 $irssi = processExists("irssi",$username);
@@ -261,7 +261,7 @@ $pyload = processExists("pyload",$username);
 $radarr = processExists("radarr",$username);
 $rtorrent = processExists("rtorrent",$username);
 $sabnzbd = processExists("sabnzbd",$username);
-$sickrage = processExists("sickrage",$username);
+$sickchill = processExists("sickchill",$username);
 $medusa = processExists("medusa",$username);
 $netdata = processExists("netdata",netdata);
 $sonarr = processExists("nzbdrone",$username);
@@ -315,7 +315,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $rutorrentURL = "https://" . $_SERVER['HTTP_HOST'] . "/rutorrent";
   $sabnzbdURL = "https://" . $_SERVER['HTTP_HOST'] . "/sabnzbd";
   $sickgearURL = "https://" . $_SERVER['HTTP_HOST'] . "/sickgear";
-  $sickrageURL = "https://" . $_SERVER['HTTP_HOST'] . "/sickrage";
+  $sickchillURL = "https://" . $_SERVER['HTTP_HOST'] . "/sickchill";
   $sonarrURL = "https://" . $_SERVER['HTTP_HOST'] . "/sonarr";
   $subsonicURL = "https://" . $_SERVER['HTTP_HOST'] . "/subsonic";
   $syncthingURL = "https://" . $_SERVER['HTTP_HOST'] . "/syncthing/";
@@ -389,8 +389,8 @@ case 0:
     $cbodysz .= $sabnzbd;
   $sickgear = isEnabled("sickgear", $username);
     $cbodysg .= $sickgear;
-  $sickrage = isEnabled("sickrage", $username);
-    $cbodysr .= $sickrage;
+  $sickchill = isEnabled("sickchill", $username);
+    $cbodysr .= $sickchill;
   $sonarr = isEnabled("sonarr", $username);
     $cbodys .= $sonarr;
   $subsonic = isEnabled("subsonic", root);
@@ -420,8 +420,8 @@ case 66:
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl start $process");
     } elseif ($process == "medusa"){
-      shell_exec("sudo systemctl disable sickrage@$username");
-      shell_exec("sudo systemctl stop sickrage@$username");
+      shell_exec("sudo systemctl disable sickchill@$username");
+      shell_exec("sudo systemctl stop sickchill@$username");
       shell_exec("sudo systemctl disable sickgear@$username");
       shell_exec("sudo systemctl stop sickgear@$username");
       shell_exec("sudo systemctl enable $process@$username");
@@ -447,11 +447,11 @@ case 66:
     } elseif ($process == "sickgear"){
       shell_exec("sudo systemctl disable medusa@$username");
       shell_exec("sudo systemctl stop medusa@$username");
-      shell_exec("sudo systemctl disable sickrage@$username");
-      shell_exec("sudo systemctl stop sickrage@$username");
+      shell_exec("sudo systemctl disable sickchill@$username");
+      shell_exec("sudo systemctl stop sickchill@$username");
       shell_exec("sudo systemctl enable $process@$username");
       shell_exec("sudo systemctl start $process@$username");
-    } elseif ($process == "sickrage"){
+    } elseif ($process == "sickchill"){
       shell_exec("sudo systemctl disable medusa@$username");
       shell_exec("sudo systemctl stop medusa@$username");
       shell_exec("sudo systemctl disable sickgear@$username");

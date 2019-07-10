@@ -163,7 +163,7 @@
           <ul class="nav nav-pills nav-stacked nav-quirk">
             <li class="grayscale"><a href="javascript:void(0)"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
             <?php if (file_exists('/install/.rutorrent.lock')) { ?>
-              <li><a class="grayscale" href="<?php echo "$rutorrentURL"; ?>" target="_blank"><img src="img/brands/rtorrent.png" class="brand-ico"> <span>ruTorrent</span></a></li>
+              <li><a class="grayscale" href="<?php echo "$rutorrentURL"; ?>" target="iFrame" onclick="abre_frame()"><img src="img/brands/rtorrent.png" class="brand-ico"> <span>ruTorrent</span></a></li>
             <?php } ?>
             <?php if (processExists("flood",$username) && file_exists('/install/.flood.lock')) { ?>
               <li><a class="grayscale" href="<?php echo "$floodURL"; ?>" target="_blank"><img src="img/brands/flood.png" class="brand-ico"> <span>Flood</span></a></li>
@@ -238,8 +238,8 @@
               <?php if (processExists("sickgear",$username) && file_exists('/install/.sickgear.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$sickgearURL"; ?>" target="_blank"><img src="img/brands/sickgear.png" class="brand-ico"> <span>SickGear</span></a></li>
               <?php } ?>
-              <?php if (processExists("sickrage",$username) && file_exists('/install/.sickrage.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$sickrageURL"; ?>" target="_blank"><img src="img/brands/sickrage.png" class="brand-ico"> <span>SickRage</span></a></li>
+              <?php if (processExists("sickchill",$username) && file_exists('/install/.sickchill.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$sickchillURL"; ?>" target="_blank"><img src="img/brands/sickchill.png" class="brand-ico"> <span>SickChill</span></a></li>
               <?php } ?>
               <?php if (processExists("nzbdrone",$username) && file_exists('/install/.sonarr.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$sonarrURL"; ?>" target="_blank"><img src="img/brands/sonarr.png" class="brand-ico"> <span>Sonarr</span></a></li>

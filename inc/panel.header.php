@@ -119,6 +119,7 @@
       //var iteration = 0;
       if(!GLOBAL.update_hold){ setTimeout(fetchData(), 30); } //Lanzamos la recolección de datos.
     }
+    fetchData();
 });
 
 function fetchData() {

@@ -8,3 +8,7 @@ GLOBAL = {
 	update_hold : false,
 	}
 
+function abre_frame(){
+	$('.row').hide();
+	$('iFrame').show();
+}

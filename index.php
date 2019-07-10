@@ -9,6 +9,7 @@
       <h2><i class="fa fa-home"></i> Panel de Control</h2>
     </div>-->
     <div class="contentpanel">
+    <iframe name="iFrame" frameborder="0" width="100%" height="100%" style="display:none"></iframe>
 
       <div class="row">
 
