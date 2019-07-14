@@ -1,1 +1,1 @@
-<a href="#"><img src="img/logo3.png" alt="swizzin Seedbox" class="logo-image" height="50" style="border-radius: 20px;" /></a>
+<img src="img/logo3.png" alt="Servidor HD" class="logo-image" height="50" style="border-radius: 20px;" />

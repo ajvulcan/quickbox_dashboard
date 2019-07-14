@@ -11,7 +11,7 @@
     <div class="contentpanel">
     <iframe name="iFrame" frameborder="0" width="100%" height="100%" style="display:none"></iframe>
 
-      <div class="row">
+      <div class="row" id="p_dash">
 
         <div class="col-md-8">
 

@@ -161,9 +161,9 @@
         <div class="tab-pane active" id="mainmenu">
           <h5 class="sidebar-title"><?php echo T('MAIN_MENU'); ?></h5>
           <ul class="nav nav-pills nav-stacked nav-quirk">
-            <li class="grayscale"><a href="javascript:void(0)"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
+            <li class="grayscale"><a href="javascript:void(0)" onclick="inicio()"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
             <?php if (file_exists('/install/.rutorrent.lock')) { ?>
-              <li><a class="grayscale" href="<?php echo "$rutorrentURL"; ?>" target="iFrame" onclick="abre_frame()"><img src="img/brands/rtorrent.png" class="brand-ico"> <span>ruTorrent</span></a></li>
+              <li><a class="grayscale" href="<?php echo "$rutorrentURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/rtorrent.png" class="brand-ico"> <span>ruTorrent</span></a></li>
             <?php } ?>
             <?php if (processExists("flood",$username) && file_exists('/install/.flood.lock')) { ?>
               <li><a class="grayscale" href="<?php echo "$floodURL"; ?>" target="_blank"><img src="img/brands/flood.png" class="brand-ico"> <span>Flood</span></a></li>
@@ -177,6 +177,10 @@
             <?php if (processExists("lounge",lounge) && file_exists('/install/.lounge.lock')) { ?>
               <li><a class="grayscale" href="<?php echo "$loungeURL"; ?>" target="_blank"><img src="img/brands/lounge.svg" class="brand-ico"> <span>The Lounge</span></a></li>
             <?php } ?>
+            <?php if (file_exists('/install/.emby.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$embyURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/emby.png" class="brand-ico"> <span>Emby</span></a></li>
+            <?php } ?>
+
             <?php if ($username == "$master") { ?>
               <?php if (processExists("resilio-sync",rslsync) && file_exists('/install/.btsync.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$btsyncURL"; ?>" target="_blank"><img src="img/brands/btsync.png" class="brand-ico"> <span>BTSync</span></a></li>
@@ -189,9 +193,6 @@
               <?php } ?>
               <?php if (file_exists('/install/.csf.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$csfURL"; ?>" target="_blank"><img src="img/brands/csf.png" class="brand-ico"> <span>CSF (firewall)</span></a></li>
-              <?php } ?>
-              <?php if (file_exists('/install/.emby.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$embyURL"; ?>" target="_blank"><img src="img/brands/emby.png" class="brand-ico"> <span>Emby</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.headphones.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$headphonesURL"; ?>" target="_blank"><img src="img/brands/headphones.png" class="brand-ico"> <span>Headphones</span></a></li>
@@ -258,6 +259,8 @@
             <li class="nav-parent">
               <a href=""><i class="fa fa-download"></i> <span><?php echo T('DOWNLOADS'); ?></span></a>
               <ul class="children">
+                <li><a href="/descargas" target="iFrame" onclick="abre_frame(false)">Carpeta común</a></a></li>
+                <li><a href="/personal" target="iFrame" onclick="abre_frame(false)">Carpeta privada</a></a></li>
                 <?php if (file_exists('/install/.rutorrent.lock') || file_exists('/install/.flood.lock')) { ?>
                 <li><a href="/rtorrent.downloads" target="_blank">rTorrent</a></a></li>
                 <?php } ?>

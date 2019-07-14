@@ -39,11 +39,11 @@ function search($data, $find, $end) {
 define('HTTP_HOST', preg_replace('~^www\.~i', '', $_SERVER['HTTP_HOST']));
 
 $panel = array(
-    'name'              => 'swizzin Seedbox',
-    'author'            => 'liaralabs',
+    'name'              => 'Servidor HD',
+    'author'            => 'ajvulcan',
     'robots'            => 'noindex, nofollow',
-    'title'             => 'swizzin dash',
-    'description'       => 'swizzin is an open-source seedbox project check out https://github.com/liaralabs/swizzin for more info',
+    'title'             => 'Servidor HD',
+    'description'       => 'Servidor privado',
     'active_page'       => basename($_SERVER['PHP_SELF']),
 );
 
