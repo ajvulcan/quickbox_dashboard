@@ -30,52 +30,46 @@
                 <div role="tabpanel">
                   <!-- Nav tabs -->
                   <ul class="nav nav-tabs nav-justified" role="tablist">
-                    <li class="active"><a data-target="#quickplus" data-toggle="tab">swizzin+</a></li>
+                    <li class="active"><a data-target="#idioma" data-toggle="tab">Idioma</a></li>
                     <li><a data-target="#chat" data-toggle="tab">Chat</a></li>
-                    <li><a data-target="#dashadjust" data-toggle="tab">Dashboard</a></li>
+                    <li><a data-target="#tema" data-toggle="tab">Tema</a></li>
                   </ul>
 
                   <!-- Tab panes -->
-                  <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="quickplus">
-                      <ul class="list-group">
-                        <li class="list-group-item">
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <small><a href="https://github.com/liaralabs/swizzin/blob/master/README.md" target="_blank">README</a></small>
-                              <small><a href="https://github.com/liaralabs/swizzin/blob/master/CHANGELOG.md" target="_blank">CHANGELOG</a></small>
-                            </div>
-                          </div>
-                        </li>
+                  <div class="tab-content" style="width: 200px;">
+                   <!--primer tab-->
+                    <div role="tabpanel" class="tab-pane active" id="idioma">
 
+
+                    <ul class="list-group">
                         <li class="list-group-item">
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <h5>swizzin</h5>
-                            </div>
-                            <div class="col-xs-12">
-                              <div class="col-xs-12 col-md-6" style="padding: 0">
-                                <ul style="padding-left: 5px">
-                                <li><small><a href="https://github.com/liaralabs/swizzin" target="_blank" alt="View swizzin on github">Github</a></small></li>
-                                <li><small><a href="https://swizzin.ltd" target="_blank" alt="swizzin homepage">Home</a></small></li>
-                                </ul>
+                          <div class="row" style="margin-left: -15px; margin-right: -15px; text-align: center;">
+
+                          <h5><?php echo T('LANG_SELECT'); ?></h5>
+
+                    <div class="col-xs-12" style="padding: 0;display:inline-table">
+                                <?php $language = array();
+                                    $language[] = array('file' => 'lang_es', 'title' =>'Spanish');
+                                    $language[] = array('file' => 'lang_dk', 'title' =>'Danish');
+                                    $language[] = array('file' => 'lang_en', 'title' =>'English');
+                                    $language[] = array('file' => 'lang_fr', 'title' =>'French');
+                                    $language[] = array('file' => 'lang_de', 'title' =>'German'); { ?>
+                                
+                                <?php foreach($language as $lang) { ?>
+                                  <small style="display: inline-table; padding: 3px;"><a href='?langSelect-<?php echo $lang['file'] ?>=true'><img class='lang-flag' src='lang/flag_<?php echo $lang['file'] ?>.png' /><?php echo $lang['title'] ?></a></small>
+                                <?php } ?>
+                                <?php } ?>
                               </div>
-                              <div class="col-xs-12 col-md-6" style="padding: 0">
-                                <ul style="padding-left: 5px">
-                                <li><small><a href="https://github.com/liaralabs/swizzin/wiki" target="_blank" alt="swizzin wiki">Wiki</a></small></li>
-                                <li><small><a href="https://github.com/liaralabs/swizzin/issues" target="_blank"><?php echo T('ISSUE_REPORT_TXT'); ?></a></small></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
+
+                        </div>
                         </li>
-                      </ul>
-                      <!--a class="btn-more" href="">View More QuickBox <i class="fa fa-long-arrow-right"></i></a-->
+                        </ul>
+
                     </div><!-- tab-pane -->
 
                     <div role="tabpanel" class="tab-pane" id="chat">
-                      <ul class="list-group notice-list">
-                        <li class="list-group-item" style="padding-top: 10px;">
+                      <ul class="list-group notice-list" style="margin: 0;">
+                        <li class="list-group-item" style="padding-top: 20px;">
                           <div class="row">
                             <div class="col-xs-2">
                               <i class="fa fa-comment"></i>
@@ -90,34 +84,22 @@
                       </ul>
                     </div><!-- tab-pane -->
 
-                    <div role="tabpanel" class="tab-pane" id="dashadjust">
+                    <div role="tabpanel" class="tab-pane" id="tema">
                       <ul class="list-group">
                         <li class="list-group-item">
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <div class="col-xs-12 col-md-6" style="padding: 0">
-                                <?php $language = array();
-				$language[] = array('file' => 'lang_es', 'title' =>'Spanish');
-                                $language[] = array('file' => 'lang_dk', 'title' =>'Danish');
-                                $language[] = array('file' => 'lang_en', 'title' =>'English');
-                                $language[] = array('file' => 'lang_fr', 'title' =>'French');
-                                $language[] = array('file' => 'lang_de', 'title' =>'German'); { ?>
-                                <h5><?php echo T('LANG_SELECT'); ?></h5>
-                                <?php foreach($language as $lang) { ?>
-                                  <small><a href='?langSelect-<?php echo $lang['file'] ?>=true'><img class='lang-flag' src='lang/flag_<?php echo $lang['file'] ?>.png' /><?php echo $lang['title'] ?></a></small>
-                                <?php } ?>
-                                <?php } ?>
-                              </div>
-                              <div class="col-xs-12 col-md-6" style="padding: 0">
+                          <div class="row" style="margin-left: -15px; margin-right: -15px; text-align: center;">
+                            <h5><?php echo T('THEME_SELECT'); ?></h5>
+                              <div class="col-xs-12" style="text-align: center;">                     
+                              
                               <?php $option = array();
                               $option[] = array('file' => 'defaulted', 'title' =>'Defaulted');
                               $option[] = array('file' => 'smoked', 'title' =>'Smoked'); { ?>
-                                <h5><?php echo T('THEME_SELECT'); ?></h5>
+                                
                                 <?php foreach($option as $theme) { ?>
-                                  <small><a href="javascript:void()" data-toggle="modal" data-target="#themeSelect<?php echo $theme['file'] ?>Confirm"><img class='lang-flag' src='img/themes/opt_<?php echo $theme['file'] ?>.png' /><?php echo $theme['title'] ?></a></small>
+                                  <small style="display: inline-table; padding: 3px;"><a href="javascript:void()" data-toggle="modal" data-target="#themeSelect<?php echo $theme['file'] ?>Confirm"><img class='lang-flag' src='img/themes/opt_<?php echo $theme['file'] ?>.png' /><?php echo $theme['title'] ?></a></small>
                                 <?php } ?>
                               <?php } ?>
-                              </div>
+                             
                             </div>
                           </div>
                         </li>
@@ -166,16 +148,16 @@
               <li><a class="grayscale" href="<?php echo "$rutorrentURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/rtorrent.png" class="brand-ico"> <span>ruTorrent</span></a></li>
             <?php } ?>
             <?php if (processExists("flood",$username) && file_exists('/install/.flood.lock')) { ?>
-              <li><a class="grayscale" href="<?php echo "$floodURL"; ?>" target="_blank"><img src="img/brands/flood.png" class="brand-ico"> <span>Flood</span></a></li>
+              <li><a class="grayscale" href="<?php echo "$floodURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/flood.png" class="brand-ico"> <span>Flood</span></a></li>
             <?php } ?>
             <?php if (processExists("deluge-web",$username) && file_exists('/install/.deluge.lock')) { ?>
-              <li><a class="grayscale" href="<?php echo "$dwURL"; ?>" target="_blank"><img src="img/brands/deluge.png" class="brand-ico"> <span>Deluge Web</span></a></li>
+              <li><a class="grayscale" href="<?php echo "$dwURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/deluge.png" class="brand-ico"> <span>Deluge Web</span></a></li>
             <?php } ?>
             <?php if (file_exists('/install/.nzbget.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$nzbgetURL"; ?>" target="_blank"><img src="img/brands/nzbget.png" class="brand-ico"> <span>NZBGet</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$nzbgetURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/nzbget.png" class="brand-ico"> <span>NZBGet</span></a></li>
             <?php } ?>
             <?php if (processExists("lounge",lounge) && file_exists('/install/.lounge.lock')) { ?>
-              <li><a class="grayscale" href="<?php echo "$loungeURL"; ?>" target="_blank"><img src="img/brands/lounge.svg" class="brand-ico"> <span>The Lounge</span></a></li>
+              <li><a class="grayscale" href="<?php echo "$loungeURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/lounge.svg" class="brand-ico"> <span>The Lounge</span></a></li>
             <?php } ?>
             <?php if (file_exists('/install/.emby.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$embyURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/emby.png" class="brand-ico"> <span>Emby</span></a></li>
@@ -183,76 +165,76 @@
 
             <?php if ($username == "$master") { ?>
               <?php if (processExists("resilio-sync",rslsync) && file_exists('/install/.btsync.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$btsyncURL"; ?>" target="_blank"><img src="img/brands/btsync.png" class="brand-ico"> <span>BTSync</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$btsyncURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/btsync.png" class="brand-ico"> <span>BTSync</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.bazarr.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$bazarrURL"; ?>" target="_blank"><img src="img/brands/bazarr.png" class="brand-ico"> <span>Bazarr</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$bazarrURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/bazarr.png" class="brand-ico"> <span>Bazarr</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.couchpotato.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$cpURL"; ?>" target="_blank"><img src="img/brands/couchpotato.png" class="brand-ico"> <span>CouchPotato</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$cpURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/couchpotato.png" class="brand-ico"> <span>CouchPotato</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.csf.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$csfURL"; ?>" target="_blank"><img src="img/brands/csf.png" class="brand-ico"> <span>CSF (firewall)</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$csfURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/csf.png" class="brand-ico"> <span>CSF (firewall)</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.headphones.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$headphonesURL"; ?>" target="_blank"><img src="img/brands/headphones.png" class="brand-ico"> <span>Headphones</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$headphonesURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/headphones.png" class="brand-ico"> <span>Headphones</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.jackett.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$jackettURL"; ?>" target="_blank"><img src="img/brands/jackett.png" class="brand-ico"> <span>Jackett</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$jackettURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/jackett.png" class="brand-ico"> <span>Jackett</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.lidarr.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$lidarrURL"; ?>" target="_blank"><img src="img/brands/lidarr.png" class="brand-ico"> <span>Lidarr</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$lidarrURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/lidarr.png" class="brand-ico"> <span>Lidarr</span></a></li>
               <?php } ?>
               <?php if (processExists("medusa",$username) && file_exists('/install/.medusa.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$medusaURL"; ?>" target="_blank"><img src="img/brands/medusa.png" class="brand-ico"> <span>Medusa</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$medusaURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/medusa.png" class="brand-ico"> <span>Medusa</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.netdata.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$netdataURL"; ?>" target="_blank"><img src="img/brands/netdata.png" class="brand-ico"> <span>Netdata</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$netdataURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/netdata.png" class="brand-ico"> <span>Netdata</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.nextcloud.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$nextcloudURL"; ?>" target="_blank"><img src="img/brands/nextcloud.png" class="brand-ico"> <span>NextCloud</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$nextcloudURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/nextcloud.png" class="brand-ico"> <span>NextCloud</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.nzbhydra.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$nzbhydraURL"; ?>" target="_blank"><img src="img/brands/nzbhydra.png" class="brand-ico"> <span>NZBHydra</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$nzbhydraURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/nzbhydra.png" class="brand-ico"> <span>NZBHydra</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.plex.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$plexURL"; ?>" target="_blank"><img src="img/brands/plex.png" class="brand-ico"> <span>Plex</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$plexURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/plex.png" class="brand-ico"> <span>Plex</span></a></li>
               <?php } ?>
               <?php if (file_exists("/install/.tautulli.lock")) { ?>
-                <li><a class="grayscale" href="<?php echo "$tautulliURL"; ?>" target="_blank"><img src="img/brands/tautulli.png" class="brand-ico"> <span>Tautulli</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$tautulliURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/tautulli.png" class="brand-ico"> <span>Tautulli</span></a></li>
               <?php } ?>
               <?php if (file_exists("/install/.ombi.lock")) { ?>
-                <li><a class="grayscale" href="<?php echo "$ombiURL"; ?>" target="_blank"><img src="img/brands/plexrequests-net.png" class="brand-ico"> <span>Ombi</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$ombiURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/plexrequests-net.png" class="brand-ico"> <span>Ombi</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.pyload.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$pyloadURL"; ?>" target="_blank"><img src="img/brands/pyload.png" class="brand-ico"> <span>pyLoad</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$pyloadURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/pyload.png" class="brand-ico"> <span>pyLoad</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.radarr.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$radarrURL"; ?>" target="_blank"><img src="img/brands/radarr.png" class="brand-ico"> <span>Radarr</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$radarrURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/radarr.png" class="brand-ico"> <span>Radarr</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.rapidleech.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$rapidleechURL"; ?>" target="_blank"><img src="img/brands/rapidleech.png" class="brand-ico"> <span>Rapidleech</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$rapidleechURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/rapidleech.png" class="brand-ico"> <span>Rapidleech</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.sabnzbd.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$sabnzbdURL"; ?>" target="_blank"><img src="img/brands/sabnzbd.png" class="brand-ico"> <span>SABnzbd</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$sabnzbdURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/sabnzbd.png" class="brand-ico"> <span>SABnzbd</span></a></li>
               <?php } ?>
               <?php if (processExists("sickgear",$username) && file_exists('/install/.sickgear.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$sickgearURL"; ?>" target="_blank"><img src="img/brands/sickgear.png" class="brand-ico"> <span>SickGear</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$sickgearURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/sickgear.png" class="brand-ico"> <span>SickGear</span></a></li>
               <?php } ?>
               <?php if (processExists("sickchill",$username) && file_exists('/install/.sickchill.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$sickchillURL"; ?>" target="_blank"><img src="img/brands/sickchill.png" class="brand-ico"> <span>SickChill</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$sickchillURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/sickchill.png" class="brand-ico"> <span>SickChill</span></a></li>
               <?php } ?>
               <?php if (processExists("nzbdrone",$username) && file_exists('/install/.sonarr.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$sonarrURL"; ?>" target="_blank"><img src="img/brands/sonarr.png" class="brand-ico"> <span>Sonarr</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$sonarrURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/sonarr.png" class="brand-ico"> <span>Sonarr</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.subsonic.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$subsonicURL"; ?>" target="_blank"><img src="img/brands/subsonic.png" class="brand-ico"> <span>Subsonic</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$subsonicURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/subsonic.png" class="brand-ico"> <span>Subsonic</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.syncthing.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$syncthingURL"; ?>" target="_blank"><img src="img/brands/syncthing.png" class="brand-ico"> <span>Syncthing</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$syncthingURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/syncthing.png" class="brand-ico"> <span>Syncthing</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.znc.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$zncURL"; ?>" target="_blank"><img src="img/brands/znc.png" class="brand-ico"> <span>ZNC</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$zncURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/znc.png" class="brand-ico"> <span>ZNC</span></a></li>
               <?php } ?>
             <?php } ?>
             <?php if (file_exists('/install/.rtorrent.lock') || file_exists('/install/.deluge.lock') || file_exists('/install/.flood.lock')) { ?>
@@ -262,10 +244,12 @@
                 <li><a href="/descargas" target="iFrame" onclick="abre_frame(false)">Carpeta común</a></a></li>
                 <li><a href="/personal" target="iFrame" onclick="abre_frame(false)">Carpeta privada</a></a></li>
                 <?php if (file_exists('/install/.rutorrent.lock') || file_exists('/install/.flood.lock')) { ?>
+                <!--
                 <li><a href="/rtorrent.downloads" target="_blank">rTorrent</a></a></li>
+                -->
                 <?php } ?>
                 <?php if (file_exists('/install/.deluge.lock')) { ?>
-                  <li><a href="/deluge.downloads" target="_blank">Deluge</a></li>
+                  <li><a href="/deluge.downloads" target="iFrame" onclick="abre_frame(false)">Deluge</a></li>
                 <?php } ?>
                 <?php if (file_exists('/home/'. $username .'/public_html/'. $username .'.zip')) { ?>
                   <li><a href="/~<?php echo "$username"; ?>/<?php echo "$username"; ?>.zip" target="_blank"> <span>OpenVPN Config</span></a></li>
@@ -274,7 +258,7 @@
             </li>
             <?php } ?>
             <?php if (processExists("shellinabox",shellinabox) && ($username == "$master")) { ?>
-            <li><a href="/shell" target="_blank"><i class="fa fa-keyboard-o"></i> <span><?php echo T('WEB_CONSOLE'); ?></span></a></li>
+            <li><a href="/shell" target="iFrame" onclick="abre_frame(false)"><i class="fa fa-keyboard-o"></i> <span><?php echo T('WEB_CONSOLE'); ?></span></a></li>
             <?php } ?>
             <!-- /// BEGIN INSERT CUSTOM MENU /// -->
             <?php include ($_SERVER['DOCUMENT_ROOT'].'/custom/custom.menu.php'); ?>
