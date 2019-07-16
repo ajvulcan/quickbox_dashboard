@@ -1,3 +1,8 @@
+<ul class="dropdown-menu pull-right">
+  <li><span style="margin-top:5x"></span></li>
+  <li><a href="#" target="_self" alt="Cerrar Sesión" onclick="logout()"><i class="fa fa-power-off" style="color:#e74c3c"></i>Cerrar sesión</a></li>
+</ul>
+
 <!--<ul class="dropdown-menu pull-right">
   <li><span style="margin-top:5x"></span></li>
   <li><a href="https://github.com/liaralabs/swizzin" target="_blank" alt="Visit swizzin on github"><i class="fa fa-github" style="color:#e74c3c"></i> GitHub</a></li>

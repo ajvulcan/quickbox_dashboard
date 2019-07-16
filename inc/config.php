@@ -39,11 +39,11 @@ function search($data, $find, $end) {
 define('HTTP_HOST', preg_replace('~^www\.~i', '', $_SERVER['HTTP_HOST']));
 
 $panel = array(
-    'name'              => 'swizzin Seedbox',
-    'author'            => 'liaralabs',
+    'name'              => 'Servidor HD',
+    'author'            => 'ajvulcan',
     'robots'            => 'noindex, nofollow',
-    'title'             => 'swizzin dash',
-    'description'       => 'swizzin is an open-source seedbox project check out https://github.com/liaralabs/swizzin for more info',
+    'title'             => 'Servidor HD',
+    'description'       => 'Servidor privado',
     'active_page'       => basename($_SERVER['PHP_SELF']),
 );
 
@@ -290,7 +290,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   include ($_SERVER['DOCUMENT_ROOT'].'/custom/url.override.php');
   // END CUSTOM URL OVERRIDES ////
 } else {
-  $bazarrURL = "http://" . $_SERVER['HTTP_HOST'] . "/bazarr";
+  $bazarrURL = "https://" . $_SERVER['HTTP_HOST'] . "/bazarr";
   $btsyncURL = "http://" . $_SERVER['HTTP_HOST'] . ":8888/gui/";
   $cpURL = "https://" . $_SERVER['HTTP_HOST'] . "/couchpotato";
   $csfURL = "https://" . $_SERVER['HTTP_HOST'] . ":3443";
@@ -306,7 +306,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $nextcloudURL = "https://" . $_SERVER['HTTP_HOST'] . "/nextcloud";
   $nzbgetURL = "https://" . $_SERVER['HTTP_HOST'] . "/nzbget";
   $nzbhydraURL = "https://" . $_SERVER['HTTP_HOST'] . "/nzbhydra";
-  $plexURL = "http://" . $_SERVER['HTTP_HOST'] . ":32400/web/";
+  $plexURL = "https://" . $_SERVER['HTTP_HOST'] . ":32400/web/";
   $tautulliURL = "https://" . $_SERVER['HTTP_HOST'] . "/tautulli";
   $ombiURL = "https://" . $_SERVER['HTTP_HOST'] . "/ombi";
   $pyloadURL = "https://" . $_SERVER['HTTP_HOST'] . "/pyload/login";
