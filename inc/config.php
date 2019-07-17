@@ -250,7 +250,6 @@ $emby = processExists("EmbyServer",emby);
 $flood = processExists("flood",$username);
 $headphones = processExists("headphones",$username);
 $irssi = processExists("irssi",$username);
-$lidarr = processExists("lidarr",$username);
 $lounge = processExists("lounge",lounge);
 $nzbget = processExists("nzbget",$username);
 $nzbhydra = processExists("nzbhydra",$username);
@@ -300,7 +299,6 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $headphonesURL = "https://" . $_SERVER['HTTP_HOST'] . "/headphones/home";
   $jackettURL = "https://" . $_SERVER['HTTP_HOST'] . "/jackett/";
   $loungeURL = "https://" . $_SERVER['HTTP_HOST'] . "/irc";
-  $lidarrURL = "http://" . $_SERVER['HTTP_HOST'] . "/lidarr";
   $medusaURL = "https://" . $_SERVER['HTTP_HOST'] . "/medusa";
   $netdataURL = "https://" . $_SERVER['HTTP_HOST'] . "/netdata/";
   $nextcloudURL = "https://" . $_SERVER['HTTP_HOST'] . "/nextcloud";
@@ -319,7 +317,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $sonarrURL = "https://" . $_SERVER['HTTP_HOST'] . "/sonarr";
   $subsonicURL = "https://" . $_SERVER['HTTP_HOST'] . "/subsonic";
   $syncthingURL = "https://" . $_SERVER['HTTP_HOST'] . "/syncthing/";
-  $lidarrURL = "http://" . $_SERVER['HTTP_HOST'] . "/lidarr";
+  $lidarrURL = "https://" . $_SERVER['HTTP_HOST'] . "/lidarr";
   if ($zssl == "true") { $zncURL = "https://" . $_SERVER['HTTP_HOST'] . ":$zport"; }
   if ($zssl == "false") { $zncURL = "http://" . $_SERVER['HTTP_HOST'] . ":$zport"; }
  }
