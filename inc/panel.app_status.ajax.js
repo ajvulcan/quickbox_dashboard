@@ -35,6 +35,7 @@ $(document).ready(function() {
   appstat_znc();
   appstat_bazarr();
   appstat_lidarr();
+  appstat_filebrowser();
   uptime();
   sload();
   bwtables();
@@ -118,6 +119,13 @@ $(document).ready(function() {
     }});
   }
 
+  // <<-------- FILEBROWSER -------->> //
+  function appstat_filebrowser() {
+    $.ajax({url: "widgets/app_status/app_status_filebrowser.php", cache:true, success: function (result) {
+      $('#appstat_filebrowser').html(result);
+      if(!GLOBAL.update_hold){ setTimeout(function(){appstat_filebrowser()}, 1000); };
+    }});
+  }
 
   // <<-------- HEADPHONES -------->> //
   function appstat_headphones() {
