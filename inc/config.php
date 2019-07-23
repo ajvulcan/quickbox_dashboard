@@ -247,6 +247,7 @@ $btsync = processExists("resilio-sync",rslsync);
 $deluged = processExists("deluged",$username);
 $delugedweb = processExists("deluge-web",$username);
 $emby = processExists("EmbyServer",emby);
+$filebrowser = processExists("filebrowser",$username);
 $flood = processExists("flood",$username);
 $headphones = processExists("headphones",$username);
 $irssi = processExists("irssi",$username);
@@ -295,6 +296,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $csfURL = "https://" . $_SERVER['HTTP_HOST'] . ":3443";
   $dwURL = "https://" . $_SERVER['HTTP_HOST'] . "/deluge/";
   $embyURL = "https://" . $_SERVER['HTTP_HOST'] . "/emby";
+  $filebrowserURL = "https://" . $_SERVER['HTTP_HOST'] . "/filebrowser";
   $floodURL = "https://" . $_SERVER['HTTP_HOST'] . "/flood/";
   $headphonesURL = "https://" . $_SERVER['HTTP_HOST'] . "/headphones/home";
   $jackettURL = "https://" . $_SERVER['HTTP_HOST'] . "/jackett/";
@@ -351,6 +353,8 @@ case 0:
     $cbodycp .= $couchpotato;
   $emby = isEnabled("emby-server", $username);
     $cbodye .= $emby;
+  $filebrowser = isEnabled("filebrowser", $username);
+    $cbodyfileb .= $filebrowser;
   $flood = isEnabled("flood", $username);
     $cbodyf .= $flood;
   $headphones = isEnabled("headphones", $username);
@@ -405,7 +409,10 @@ break;
 /* enable & start services */
 case 66:
   $process = $_GET['serviceenable'];
-    if ($process == "resilio-sync"){
+ if ($process == "filebrowser"){
+      shell_exec("sudo systemctl enable $process");
+      shell_exec("sudo systemctl start $process");
+    } elseif ($process == "resilio-sync"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl start $process");
     } elseif ($process == "shellinabox"){
@@ -469,7 +476,10 @@ break;
 /* disable & stop services */
 case 77:
   $process = $_GET['servicedisable'];
-    if ($process == "resilio-sync"){
+  if ($process == "filebrowser"){
+      shell_exec("sudo systemctl stop $process");
+      shell_exec("sudo systemctl disable $process");
+    } elseif ($process == "resilio-sync"){
       shell_exec("sudo systemctl stop $process");
       shell_exec("sudo systemctl disable $process");
     } elseif ($process == "shellinabox"){
@@ -512,7 +522,10 @@ break;
 /* restart services */
 case 88:
   $process = $_GET['servicestart'];
-    if ($process == "resilio-sync"){
+  if ($process == "filebrowser"){
+      shell_exec("sudo systemctl enable $process");
+      shell_exec("sudo systemctl restart $process");
+    } elseif ($process == "resilio-sync"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl restart $process");
     } elseif ($process == "shellinabox"){
