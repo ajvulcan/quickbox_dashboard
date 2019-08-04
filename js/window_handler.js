@@ -112,4 +112,3 @@ function logout() {
 
     return false;
 }
-

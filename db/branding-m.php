@@ -1,6 +1,7 @@
 <ul class="dropdown-menu pull-right">
   <li><span style="margin-top:5x"></span></li>
   <li><a href="#" target="_self" alt="Cerrar Sesión" onclick="logout()"><i class="fa fa-power-off" style="color:#e74c3c"></i>Cerrar sesión</a></li>
+  <!--<li><a href="#" target="_self" alt="Reiniciar servidor" onclick="reboot()"><i class="fa fa-retweet" style="color:lime"></i>Reiniciar servidor</a></li>-->
 </ul>
 
 <!--<ul class="dropdown-menu pull-right">

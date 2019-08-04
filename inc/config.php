@@ -29,7 +29,6 @@ if (file_exists($zconf)) {
     $zssl = search($zconf_data, 'SSL = ', "\n");
 }
 
-
 function search($data, $find, $end) {
     $pos1 = strpos($data, $find) + strlen($find);
     $pos2 = strpos($data, $end, $pos1);

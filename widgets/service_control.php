@@ -34,15 +34,7 @@
                       <td class="text-center"><a href="javascript:;" onclick="location.href='?id=88&servicestart=rtorrent'" class="btn btn-xs btn-default"><i class="fa fa-refresh text-info"></i> <?php echo T('REFRESH'); ?></a></td>
                       <td class="text-center"><?php echo "$cbodyr"; ?></td>
                     </tr>
-                  <?php } ?>
-
-		    <?php if (file_exists("/install/.filebrowser.lock")) { ?>
-                    <tr>
-                      <td><span id="appstat_filebrowser"></span> Filebrowser </td>
-                      <td class="text-center"><a href="javascript:;" onclick="location.href='?id=88&servicestart=filebrowser'" class="btn btn-xs btn-default"><i class="fa fa-refresh text-info"></i> <?php echo T('REFRESH'); ?></a></td>
-                      <td class="text-center"><?php echo "$cbodyfileb"; ?></td>
-                    </tr>
-                    <?php } ?>
+                  <?php } ?>	                
 
                   <?php if (file_exists("/install/.flood.lock")) { ?>
                     <tr>
@@ -98,6 +90,15 @@
                     </tr>
                     <//?php } ?>
                     -->
+                    
+                    <?php if (file_exists("/install/.filebrowser.lock")) { ?>
+                    <tr>
+                      <td><span id="appstat_filebrowser"></span> Filebrowser </td>
+                      <td class="text-center"><a href="javascript:;" onclick="location.href='?id=88&servicestart=filebrowser'" class="btn btn-xs btn-default"><i class="fa fa-refresh text-info"></i> <?php echo T('REFRESH'); ?></a></td>
+                      <td class="text-center"><?php echo "$cbodyfileb"; ?></td>
+                    </tr>
+                    <?php } ?>
+
                     <?php if (file_exists("/install/.bazarr.lock")) { ?>
                     <tr>
                       <td><span id="appstat_bazarr"></span> Bazarr </td>

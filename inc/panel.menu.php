@@ -178,7 +178,7 @@
               <?php } ?>
 
               <?php if (file_exists('/install/.filebrowser.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$filebrowserURL"; ?>" target="_blank"><img src="img/brands/filebrowser.png" class="brand-ico"> <span>Filebrowser</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$filebrowserURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/filebrowser.png" class="brand-ico"> <span>Filebrowser</span></a></li>
               <?php } ?>
 
               <?php if (file_exists('/install/.headphones.lock')) { ?>
