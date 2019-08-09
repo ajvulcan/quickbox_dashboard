@@ -12,8 +12,8 @@ $tx[] = @file_get_contents("/sys/class/net/eth0/statistics/tx_bytes");
 settype($rx[], "integer");
 settype($tx[], "integer");
 
-$tbps = $tx[1] - $tx[0];
-$rbps = $rx[1] - $rx[0];
+$tbps = intval($tx[1]) - intval($tx[0]);
+$rbps = intval($rx[1]) - intval($rx[0]);
 $round_rx=round(($rbps*8)/10000000, 3);
 $round_tx=round(($tbps*8)/10000000, 3);
 //$round_rx=round($rbps/1024/1024, 1);

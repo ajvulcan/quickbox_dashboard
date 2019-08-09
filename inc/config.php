@@ -274,10 +274,21 @@ $csf = processExists("lfd",root);
 $sickgear = processExists("sickgear",$username);
 $znc = processExists("znc",$username);
 $lidarr = processExists("lidarr",$username);
+$webmin = processExists("webmin",$username);
 
 function isEnabled($process, $username){
   $service = $process;
   if(file_exists('/etc/systemd/system/multi-user.target.wants/'.$process.'@'.$username.'.service') || file_exists('/etc/systemd/system/multi-user.target.wants/'.$process.'.service')){
+    return " <div class=\"toggle-wrapper text-center\"> <div class=\"toggle-en toggle-light primary\" onclick=\"location.href='?id=77&servicedisable=$service'\"></div></div>";
+  } else {
+    return " <div class=\"toggle-wrapper text-center\"> <div class=\"toggle-dis toggle-light primary\" onclick=\"location.href='?id=66&serviceenable=$service'\"></div></div>";
+  }
+}
+
+function isEnabled2($process){
+  $service = $process;
+  $estado = trim( shell_exec("systemctl is-active $process") );
+  if($estado=="active"){
     return " <div class=\"toggle-wrapper text-center\"> <div class=\"toggle-en toggle-light primary\" onclick=\"location.href='?id=77&servicedisable=$service'\"></div></div>";
   } else {
     return " <div class=\"toggle-wrapper text-center\"> <div class=\"toggle-dis toggle-light primary\" onclick=\"location.href='?id=66&serviceenable=$service'\"></div></div>";
@@ -289,6 +300,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   include ($_SERVER['DOCUMENT_ROOT'].'/custom/url.override.php');
   // END CUSTOM URL OVERRIDES ////
 } else {
+  $webminURL = "https://" . $_SERVER['HTTP_HOST'] . ":10000/";
   $bazarrURL = "https://" . $_SERVER['HTTP_HOST'] . "/bazarr";
   $btsyncURL = "http://" . $_SERVER['HTTP_HOST'] . ":8888/gui/";
   $cpURL = "https://" . $_SERVER['HTTP_HOST'] . "/couchpotato";
@@ -334,6 +346,8 @@ $location = "/home";
 /* check for services */
 switch (intval($_GET['id'])) {
 case 0:
+  $webmin = isEnabled2("webmin");
+    $cbodywmin .= $webmin;
   $rtorrent = isEnabled("rtorrent", $username);
     $cbodyr .= $rtorrent;
   $irssi = isEnabled("irssi", $username);
@@ -462,6 +476,9 @@ case 66:
       shell_exec("sudo systemctl stop sickgear@$username");
       shell_exec("sudo systemctl enable $process@$username");
       shell_exec("sudo systemctl start $process@$username");
+    } elseif ($process == "webmin"){
+      shell_exec("sudo systemctl enable $process");
+      shell_exec("sudo systemctl start $process");
     } elseif ($process == "subsonic"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl start $process");
@@ -511,6 +528,9 @@ case 77:
     } elseif ($process == "subsonic"){
       shell_exec("sudo systemctl stop $process");
       shell_exec("sudo systemctl disable $process");
+    } elseif ($process == "webmin"){
+      shell_exec("sudo systemctl stop $process");
+      shell_exec("sudo systemctl disable $process");
     } else {
       shell_exec("sudo systemctl stop $process@$username");
       shell_exec("sudo systemctl disable $process@$username");
@@ -555,6 +575,9 @@ case 88:
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl restart $process");
     } elseif ($process == "subsonic"){
+      shell_exec("sudo systemctl enable $process");
+      shell_exec("sudo systemctl restart $process");
+    } elseif ($process == "webmin"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl restart $process");
     } else {

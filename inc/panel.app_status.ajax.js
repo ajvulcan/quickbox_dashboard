@@ -36,6 +36,7 @@ $(document).ready(function() {
   appstat_bazarr();
   appstat_lidarr();
   appstat_filebrowser();
+  appstat_webmin();
   uptime();
   sload();
   bwtables();
@@ -124,6 +125,14 @@ $(document).ready(function() {
     $.ajax({url: "widgets/app_status/app_status_filebrowser.php", cache:true, success: function (result) {
       $('#appstat_filebrowser').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_filebrowser()}, 1000); };
+    }});
+  }
+
+  // <<-------- WEBMIN -------->> //
+  function appstat_webmin() {
+    $.ajax({url: "widgets/app_status/app_status_webmin.php", cache:true, success: function (result) {
+      $('#appstat_webmin').html(result);
+      if(!GLOBAL.update_hold){ setTimeout(function(){appstat_webmin()}, 1000); };
     }});
   }
 

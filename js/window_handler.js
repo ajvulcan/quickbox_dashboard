@@ -71,6 +71,7 @@ function inicio(){
 	appstat_znc();
 	appstat_bazarr();
 	appstat_lidarr();
+	appstat_webmin();
 	uptime();
 	sload();
 	bwtables();
