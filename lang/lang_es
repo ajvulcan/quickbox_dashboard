@@ -119,7 +119,6 @@ $L['COUCHPOTATO'] = 'Descarga películas automáticamente, fácilmente y con la 
 $L['CSF'] = 'ConfigServer Firewall, también conocido como CSF, es un script de configuración para firewall creado para proporcionar una mejor seguridad para tu servidor, además de una interfaz avanzada para controlar fácilmente tus opciones de firewall.';
 $L['DELUGE'] = 'Deluge es un cliente torrent de software libre, ligero y multiplataforma.';
 $L['EMBY'] = 'Emby Server es un paquete de software de cliente-servidor que permite a sus usuarios hospedar sus copias multimedia legales – música, vídeo e imágenes… El cliente de Emby es una app que necesitarás instalar en tus dispositivos móviles y ciertos gadgets para televisión, como Android TV.';
-$L['FILEBROWSER'] = 'filebrowser ofrece una interfaz de control de ficheros en un directorio y puede ser usado para subir, descargar, borrar, previes, renombrar y editar tus ficheros. Permite la creación de multiples usuarios y que cada uno tenga su propio directorio.';
 $L['HEADPHONES'] = 'Headphones es un gestor de descarga automática de música para NZB y torrent, escrito en Python. Soporta SABnzbd, NZBget, Transmission, µTorrent, Deluge y Blackhole.';$L['JACKETT'] = 'API Support for your favorite private trackers.';
 $L['MEDUSA'] = 'Gestor de descarga de Series de TV. Escanea la publicación de nuevos episodios de tus series favoritas, y cuando estos son posteados hace su magia. Permite búsqueda manual y otras funciones exclusivas. Echa un ojo en <a href="https://github.com/pymedusa/Medusa" target="_blank">Github</a>.';
 $L['NEXTCLOUD'] = 'Nextcloud es una plataforma de código abierto para la sincronización y compartición de archivos y directorios en tu servidor. Accede y sincroniza tus archivos, contactos, calendarios y comunícate a través de tus distintos dispositivos. ¡Tú decides qué hacer con tus datos, dónde alojarlos y quien puede acceder a ellos!';
@@ -143,6 +142,18 @@ $L['SUBSONIC'] = 'Subsonic es un servidor multimedia sobre web. Está escrito en
 $L['SYNCTHING'] = 'Herramienta de código abierto para la sincronización continua de archivos mediante BitTorrent.';
 $L['X2GO'] = 'X2Go es un software de código abierto para acceso remoto al escritorio que utiliza el protocolo NX.';
 $L['ZNC'] = 'ZNC es un bouncer o BNC para IRC. Permite separar al cliente del servidor IRC, e incluso de canales concretos.';
+$L['NCDU'] = 'NCDU es un analizador de disco usado para poder tener una visión completa del uso del disco.';
+$L['WIREGUARD'] = 'Es un servidor VPN para la creación de un tunel privado haciendo uso de las aplicaciones de wireward en diferentes dispositivos.';
+$L['XMR-STAK'] = 'Es una aplicación de minería que hace uso de graficas NVIDIA o AMD para diferentes criptomonedas: Ryo, Monero, Turtlecoin, Graft, Bittube, Loki, Aeon y otras.';
+$L['WEBMIN'] = 'Es una interfaz gráfica de administración completa del servidor.';
+$L['VSFTPD'] = 'Servidor FTP potente y ligero.';
+$L['SHELLINABOX'] = 'Aplicación web que actúa como consola BASH de acceso al servidor y comandos.';
+$L['RUTORRENT'] = 'Interfaz gráfica web para rtorrent.';
+$L['RCLONE'] = 'Rclone es una aplicación de sincronización de ficheros a multitud de servicios.';
+$L['PANEL'] = 'Interfaz web con dashboard para el control de todas las aplicaciones de Servidor HD.';
+$L['NGINX'] = 'Servidor web ligero.';
+$L['NETDATA'] = 'Aplicación web para el registro gráfico completo de todas las caracteristicas del servidor que muestra a tiempo real.';
+$L['LETSENCRYPT'] = 'Aplicación para la creación de un certificado público validado para nuestro servidor de forma gratuita.';
 
 // package management center buttons
 $L['CLI'] = 'Solo Consola Web';
