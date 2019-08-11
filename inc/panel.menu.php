@@ -252,6 +252,7 @@
               <ul class="children">
                 <li><a href="/descargas" target="iFrame" onclick="abre_frame(false)">Carpeta común</a></a></li>
                 <li><a href="/personal" target="iFrame" onclick="abre_frame(false)">Carpeta privada</a></a></li>
+                <li><a href="/nube" target="iFrame" onclick="abre_frame(false)">Carpeta nube</a></a></li>
                 <?php if (file_exists('/install/.rutorrent.lock') || file_exists('/install/.flood.lock')) { ?>
                 <!--
                 <li><a href="/rtorrent.downloads" target="_blank">rTorrent</a></a></li>
