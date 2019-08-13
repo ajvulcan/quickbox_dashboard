@@ -24,7 +24,9 @@ function microtime_float() {
 //$load = round($loads[0]/($core_nums + 1)*100, 2);
 
 //Obtengo porcentaje de uso de microprocesador real.
-$load = trim( shell_exec("echo $[100-$(vmstat 1 2|tail -1|awk '{print $15}')]") );
+//$load = trim( shell_exec("echo $[100-$(vmstat 1 2|tail -1|awk '{print $15}')]") );
+$load_inv = shell_exec("vmstat 1 2|tail -1|awk '{print $15}'");
+$load = intval(100) - intval($load_inv);
 
 //Incluimos frecuencia en tiempo real
 if (false === ($str = @file("/proc/cpuinfo"))) return false;
@@ -37,10 +39,10 @@ $tam = count($freq_array); //tamaño del array
 $resultado = 0;
 
 for($i=0; $i < $tam ; $i++){
-	$resultado = $resultado + $freq_array[$i];
+  $resultado = intval($resultado) + intval($freq_array[$i]);
 }
 
-$resultado = $resultado / $tam; //media aritmética
+$resultado = intval($resultado / $tam); //media aritmética
 
 ?>
 

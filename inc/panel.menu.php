@@ -1,6 +1,7 @@
 <?php
   $current_vs = "<span id=\"version-result\"></span>";
 ?>
+
 <body class="body">
 <header>
   <div class="headerpanel">
