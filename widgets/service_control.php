@@ -52,6 +52,14 @@
                     </tr>
                     <?php } ?>
 
+                  <?php if (file_exists("/install/.rclone.lock")) { ?>
+                    <tr>
+                      <td><span id="appstat_rclone"></span> Rclone </td>
+                      <td class="text-center"><a href="javascript:;" onclick="location.href='?id=88&servicestart=rclone'" class="btn btn-xs btn-default"><i class="fa fa-refresh text-info"></i> <?php echo T('REFRESH'); ?></a></td>
+                      <td class="text-center"><?php echo "$cbodyrclone"; ?></td>
+                    </tr>
+                    <?php } ?>
+
                   <?php if (file_exists("/install/.deluge.lock")) { ?>
                     <tr>
                       <td><span id="appstat_deluged"></span> DelugeD </td>

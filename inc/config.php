@@ -348,6 +348,8 @@ switch (intval($_GET['id'])) {
 case 0:
   $webmin = isEnabled2("webmin");
     $cbodywmin .= $webmin;
+  $rclone = isEnabled("rclone", $username);
+    $cbodyrclone .= $rclone;
   $rtorrent = isEnabled("rtorrent", $username);
     $cbodyr .= $rtorrent;
   $irssi = isEnabled("irssi", $username);
