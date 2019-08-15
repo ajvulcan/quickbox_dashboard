@@ -163,15 +163,14 @@
             <?php if (file_exists('/install/.emby.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$embyURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/emby.png" class="brand-ico"> <span>Emby</span></a></li>
             <?php } ?>
-
+            <?php if (file_exists('/install/.plex.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$plexURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/plex.png" class="brand-ico"> <span>Plex</span></a></li>
+              <?php } ?>
             <?php if (file_exists('/install/.filebrowser.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$filebrowserURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/filebrowser.png" class="brand-ico"> <span>Filebrowser</span></a></li>
               <?php } ?>
 
-            <?php if ($username == "$master") { ?>
-              <?php if (file_exists('/install/.plex.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$plexURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/plex.png" class="brand-ico"> <span>Plex</span></a></li>
-              <?php } ?>
+            <?php if ($username == "$master") { ?>              
               <?php if (processExists("resilio-sync",rslsync) && file_exists('/install/.btsync.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$btsyncURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/btsync.png" class="brand-ico"> <span>BTSync</span></a></li>
               <?php } ?>

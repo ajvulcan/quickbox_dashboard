@@ -18,9 +18,11 @@ $round_rx=round(($rbps*8)/10000000, 3);
 $round_tx=round(($tbps*8)/10000000, 3);
 //$round_rx=round($rbps/1024/1024, 1);
 //$round_tx=round($tbps/1024/1024, 1);
+
 $time=date("U")."000";
 $_SESSION['rx'][] = "[$time, $round_rx]";
 $_SESSION['tx'][] = "[$time, $round_tx]";
+
 //$data['label'] = "1";
 //$data['data'] = $_SESSION['rx'];
 # to make sure that the graph shows only the
