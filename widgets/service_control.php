@@ -34,7 +34,7 @@
                       <td class="text-center"><a href="javascript:;" onclick="location.href='?id=88&servicestart=rtorrent'" class="btn btn-xs btn-default"><i class="fa fa-refresh text-info"></i> <?php echo T('REFRESH'); ?></a></td>
                       <td class="text-center"><?php echo "$cbodyr"; ?></td>
                     </tr>
-                  <?php } ?>	                               
+                  <?php } ?>
 
                   <?php if (file_exists("/install/.flood.lock")) { ?>
                     <tr>
@@ -52,7 +52,7 @@
                     </tr>
                     <?php } ?>
 
-                  <?php if (file_exists("/install/.rclone.lock")) { ?>
+                  <?php if (file_exists("/install/.rclone.lock") && file_exists('/home/'. $username. '/.config/rclone/rclone.conf')) { ?>
                     <tr>
                       <td><span id="appstat_rclone"></span> Rclone </td>
                       <td class="text-center"><a href="javascript:;" onclick="location.href='?id=88&servicestart=rclone'" class="btn btn-xs btn-default"><i class="fa fa-refresh text-info"></i> <?php echo T('REFRESH'); ?></a></td>

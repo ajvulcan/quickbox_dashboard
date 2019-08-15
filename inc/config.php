@@ -250,6 +250,8 @@ $filebrowser = processExists("filebrowser",$username);
 $flood = processExists("flood",$username);
 $headphones = processExists("headphones",$username);
 $irssi = processExists("irssi",$username);
+$rclone = processExists("rclone",$username);
+$plexdrive = processExists("plexdrive",$username);
 $lounge = processExists("lounge",lounge);
 $nzbget = processExists("nzbget",$username);
 $nzbhydra = processExists("nzbhydra",$username);
@@ -350,6 +352,8 @@ case 0:
     $cbodywmin .= $webmin;
   $rclone = isEnabled("rclone", $username);
     $cbodyrclone .= $rclone;
+  $plexdrive = isEnabled("plexdrive", $username);
+    $cbodyplexdrive .= $plexdrive;
   $rtorrent = isEnabled("rtorrent", $username);
     $cbodyr .= $rtorrent;
   $irssi = isEnabled("irssi", $username);
