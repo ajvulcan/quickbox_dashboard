@@ -59,6 +59,13 @@
                       <td class="text-center"><?php echo "$cbodyrclone"; ?></td>
                     </tr>
                     <?php } ?>
+                  <?php if (file_exists("/install/.plexdrive.lock")) { ?>
+                    <tr>
+                      <td><span id="appstat_plexdrive"></span> PlexDrive </td>
+                      <td class="text-center"><a href="javascript:;" onclick="location.href='?id=88&servicestart=plexdrive'" class="btn btn-xs btn-default"><i class="fa fa-refresh text-info"></i> <?php echo T('REFRESH'); ?></a></td>
+                      <td class="text-center"><?php echo "$cbodyplexdrive"; ?></td>
+                    </tr>
+                    <?php } ?>
 
                   <?php if (file_exists("/install/.deluge.lock")) { ?>
                     <tr>

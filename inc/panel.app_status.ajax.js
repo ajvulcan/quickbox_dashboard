@@ -38,6 +38,7 @@ $(document).ready(function() {
   appstat_filebrowser();
   appstat_webmin();
   appstat_rclone();
+  appstat_plexdrive();
   uptime();
   sload();
   bwtables();
@@ -159,6 +160,14 @@ $(document).ready(function() {
     $.ajax({url: "widgets/app_status/app_status_rclone.php", cache:true, success: function (result) {
       $('#appstat_rclone').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_rclone()}, 1000); };
+    }});
+  }
+
+  // <<-------- PLEXDRIVE -------->> //
+  function appstat_plexdrive() {
+    $.ajax({url: "widgets/app_status/app_status_plexdrive.php", cache:true, success: function (result) {
+      $('#appstat_plexdrive').html(result);
+      if(!GLOBAL.update_hold){ setTimeout(function(){appstat_plexdrive()}, 1000); };
     }});
   }
 
