@@ -437,9 +437,9 @@ case 66:
     } elseif ($process == "shellinabox"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl start $process");
-    } elseif ($process == "emby-server"){
+   /* } elseif ($process == "emby-server"){
       shell_exec("sudo systemctl enable $process");
-      shell_exec("sudo systemctl start $process");
+      shell_exec("sudo systemctl start $process"); */
     } elseif ($process == "headphones"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl start $process");
@@ -507,9 +507,9 @@ case 77:
     } elseif ($process == "shellinabox"){
       shell_exec("sudo systemctl stop $process");
       shell_exec("sudo systemctl disable $process");
-    } elseif ($process == "emby-server"){
+    /* } elseif ($process == "emby-server"){
       shell_exec("sudo systemctl stop $process");
-      shell_exec("sudo systemctl disable $process");
+      shell_exec("sudo systemctl disable $process"); */
     } elseif ($process == "headphones"){
       shell_exec("sudo systemctl stop $process");
       shell_exec("sudo systemctl disable $process");
@@ -556,9 +556,9 @@ case 88:
     } elseif ($process == "shellinabox"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl restart $process");
-    } elseif ($process == "emby-server"){
+  /*  } elseif ($process == "emby-server"){
       shell_exec("sudo systemctl enable $process");
-      shell_exec("sudo systemctl restart $process");
+      shell_exec("sudo systemctl restart $process"); */
     } elseif ($process == "headphones"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl restart $process");
