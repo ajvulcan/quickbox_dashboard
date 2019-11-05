@@ -55,7 +55,7 @@ $(document).ready(function() {
 
  // <<-------- BAZARR -------->> //
   function appstat_bazarr() {
-    $.ajax({url: "widgets/app_status/app_status_bazarr.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_bazarr.php", cache:false, success: function (result) {
       $('#appstat_bazarr').html(result);
        if(!GLOBAL.update_hold){ setTimeout(function(){appstat_bazarr()}, 1000); };
     }});
@@ -63,7 +63,7 @@ $(document).ready(function() {
 
    // <<-------- LIDARR -------->> //
   function appstat_lidarr() {
-    $.ajax({url: "widgets/app_status/app_status_lidarr.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_lidarr.php", cache:false, success: function (result) {
       $('#appstat_lidarr').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_lidarr()}, 1000); }
     }});
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
   // <<-------- BTSYNC -------->> //
   function appstat_btsync() {
-    $.ajax({url: "widgets/app_status/app_status_btsync.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_btsync.php", cache:false, success: function (result) {
       $('#appstat_btsync').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_btsync()}, 1000); };
     }});
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
   // <<-------- COUCHPOTATO -------->> //
   function appstat_couchpotato() {
-    $.ajax({url: "widgets/app_status/app_status_couchpotato.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_couchpotato.php", cache:false, success: function (result) {
       $('#appstat_couchpotato').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_couchpotato()}, 1000); };
     }});
@@ -89,7 +89,7 @@ $(document).ready(function() {
 
   // <<-------- DELUGED -------->> //
   function appstat_deluged() {
-    $.ajax({url: "widgets/app_status/app_status_deluged.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_deluged.php", cache:false, success: function (result) {
       $('#appstat_deluged').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_deluged()}, 1000); };
     }});
@@ -98,7 +98,7 @@ $(document).ready(function() {
 
   // <<-------- DELUGE WEB -------->> //
   function appstat_delugeweb() {
-    $.ajax({url: "widgets/app_status/app_status_delugeweb.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_delugeweb.php", cache:false, success: function (result) {
       $('#appstat_delugeweb').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_delugeweb()}, 1000); };
     }});
@@ -107,7 +107,7 @@ $(document).ready(function() {
 
   // <<-------- EMBY -------->> //
   function appstat_emby() {
-    $.ajax({url: "widgets/app_status/app_status_emby.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_emby.php", cache:false, success: function (result) {
       $('#appstat_emby').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_emby()}, 1000); };
     }});
@@ -116,7 +116,7 @@ $(document).ready(function() {
 
   // <<-------- FLOOD -------->> //
   function appstat_flood() {
-    $.ajax({url: "widgets/app_status/app_status_flood.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_flood.php", cache:false, success: function (result) {
       $('#appstat_flood').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_flood()}, 1000); };
     }});
@@ -124,7 +124,7 @@ $(document).ready(function() {
 
   // <<-------- FILEBROWSER -------->> //
   function appstat_filebrowser() {
-    $.ajax({url: "widgets/app_status/app_status_filebrowser.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_filebrowser.php", cache:false, success: function (result) {
       $('#appstat_filebrowser').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_filebrowser()}, 1000); };
     }});
@@ -132,7 +132,7 @@ $(document).ready(function() {
 
   // <<-------- WEBMIN -------->> //
   function appstat_webmin() {
-    $.ajax({url: "widgets/app_status/app_status_webmin.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_webmin.php", cache:false, success: function (result) {
       $('#appstat_webmin').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_webmin()}, 1000); };
     }});
@@ -140,7 +140,7 @@ $(document).ready(function() {
 
   // <<-------- HEADPHONES -------->> //
   function appstat_headphones() {
-    $.ajax({url: "widgets/app_status/app_status_headphones.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_headphones.php", cache:false, success: function (result) {
       $('#appstat_headphones').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_headphones()}, 1000); };
     }});
@@ -149,7 +149,7 @@ $(document).ready(function() {
 
   // <<-------- IRSSI -------->> //
   function appstat_irssi() {
-    $.ajax({url: "widgets/app_status/app_status_irssi.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_irssi.php", cache:false, success: function (result) {
       $('#appstat_irssi').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_irssi()}, 1000); };
     }});
@@ -157,7 +157,7 @@ $(document).ready(function() {
 
   // <<-------- RCLONE -------->> //
   function appstat_rclone() {
-    $.ajax({url: "widgets/app_status/app_status_rclone.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_rclone.php", cache:false, success: function (result) {
       $('#appstat_rclone').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_rclone()}, 1000); };
     }});
@@ -165,7 +165,7 @@ $(document).ready(function() {
 
   // <<-------- PLEXDRIVE -------->> //
   function appstat_plexdrive() {
-    $.ajax({url: "widgets/app_status/app_status_plexdrive.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_plexdrive.php", cache:false, success: function (result) {
       $('#appstat_plexdrive').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_plexdrive()}, 1000); };
     }});
@@ -173,7 +173,7 @@ $(document).ready(function() {
 
   // <<-------- JACKETT -------->> //
   function appstat_jackett() {
-    $.ajax({url: "widgets/app_status/app_status_jackett.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_jackett.php", cache:false, success: function (result) {
       $('#appstat_jackett').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_jackett()}, 1000); };
     }});
@@ -181,7 +181,7 @@ $(document).ready(function() {
 
   // <<-------- THE LOUNGE -------->> //
   function appstat_lounge() {
-    $.ajax({url: "widgets/app_status/app_status_lounge.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_lounge.php", cache:false, success: function (result) {
       $('#appstat_lounge').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_lounge()}, 1000); };
     }});
@@ -190,7 +190,7 @@ $(document).ready(function() {
 
   // <<-------- MEDUSA -------->> //
   function appstat_medusa() {
-    $.ajax({url: "widgets/app_status/app_status_medusa.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_medusa.php", cache:false, success: function (result) {
       $('#appstat_medusa').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_medusa()}, 1000); };
     }});
@@ -199,7 +199,7 @@ $(document).ready(function() {
 
   // <<-------- NETDATA -------->> //
   function appstat_netdata() {
-    $.ajax({url: "widgets/app_status/app_status_netdata.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_netdata.php", cache:false, success: function (result) {
       $('#appstat_netdata').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_netdata()}, 1000); };
     }});
@@ -208,7 +208,7 @@ $(document).ready(function() {
 
   // <<-------- NEXTCLOUD -------->> //
   function appstat_nextcloud() {
-    $.ajax({url: "widgets/app_status/app_status_nextcloud.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_nextcloud.php", cache:false, success: function (result) {
       $('#appstat_nextcloud').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_nextcloud()}, 1000); };
     }});
@@ -217,7 +217,7 @@ $(document).ready(function() {
 
   // <<-------- NZBGET -------->> //
   function appstat_nzbget() {
-    $.ajax({url: "widgets/app_status/app_status_nzbget.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_nzbget.php", cache:false, success: function (result) {
       $('#appstat_nzbget').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_nzbget()}, 1000); };
     }});
@@ -226,7 +226,7 @@ $(document).ready(function() {
 
   // <<-------- NZBHYDRA -------->> //
   function appstat_nzbhydra() {
-    $.ajax({url: "widgets/app_status/app_status_nzbhydra.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_nzbhydra.php", cache:false, success: function (result) {
       $('#appstat_nzbhydra').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_nzbhydra()}, 1000); };
     }});
@@ -235,7 +235,7 @@ $(document).ready(function() {
 
   // <<-------- OMBI -------->> //
   function appstat_ombi() {
-    $.ajax({url: "widgets/app_status/app_status_ombi.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_ombi.php", cache:false, success: function (result) {
       $('#appstat_ombi').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_ombi()}, 1000); };
     }});
@@ -244,7 +244,7 @@ $(document).ready(function() {
 
   // <<-------- OPENVPN -------->> //
   function appstat_openvpn() {
-    $.ajax({url: "widgets/app_status/app_status_openvpn.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_openvpn.php", cache:false, success: function (result) {
       $('#appstat_openvpn').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_openvpn()}, 1000); };
     }});
@@ -253,7 +253,7 @@ $(document).ready(function() {
 
   // <<-------- PLEX -------->> //
   function appstat_plex() {
-    $.ajax({url: "widgets/app_status/app_status_plex.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_plex.php", cache:false, success: function (result) {
       $('#appstat_plex').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_plex()}, 1000); };
     }});
@@ -262,7 +262,7 @@ $(document).ready(function() {
 
   // <<-------- TAUTULLI -------->> //
   function appstat_tautulli() {
-    $.ajax({url: "widgets/app_status/app_status_tautulli.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_tautulli.php", cache:false, success: function (result) {
       $('#appstat_tautulli').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_tautulli()}, 1000); };
     }});
@@ -271,7 +271,7 @@ $(document).ready(function() {
 
   // <<-------- PYLOAD -------->> //
   function appstat_pyload() {
-    $.ajax({url: "widgets/app_status/app_status_pyload.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_pyload.php", cache:false, success: function (result) {
       $('#appstat_pyload').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_pyload()}, 1000); };
     }});
@@ -280,7 +280,7 @@ $(document).ready(function() {
 
   // <<-------- QUASSEL -------->> //
   function appstat_quassel() {
-    $.ajax({url: "widgets/app_status/app_status_quassel.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_quassel.php", cache:false, success: function (result) {
       $('#appstat_quassel').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_quassel()}, 1000); };
     }});
@@ -289,7 +289,7 @@ $(document).ready(function() {
 
   // <<-------- RADARR -------->> //
   function appstat_radarr() {
-    $.ajax({url: "widgets/app_status/app_status_radarr.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_radarr.php", cache:false, success: function (result) {
       $('#appstat_radarr').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_radarr()}, 1000); };
     }});
@@ -298,7 +298,7 @@ $(document).ready(function() {
 
   // <<-------- RAPIDLEECH -------->> //
 /*  function appstat_rapidleech() {
-    $.ajax({url: "widgets/app_status/app_status_rapidleech.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_rapidleech.php", cache:false, success: function (result) {
       $('#appstat_rapidleech').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_rapidleech()}, 1000); };
     }});
@@ -308,7 +308,7 @@ $(document).ready(function() {
 
   // <<-------- RTORRENT -------->> //
   function appstat_rtorrent() {
-    $.ajax({url: "widgets/app_status/app_status_rtorrent.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_rtorrent.php", cache:false, success: function (result) {
       $('#appstat_rtorrent').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_rtorrent()}, 1000); };
     }});
@@ -317,7 +317,7 @@ $(document).ready(function() {
 
   // <<-------- SABNZBD -------->> //
   function appstat_sabnzbd() {
-    $.ajax({url: "widgets/app_status/app_status_sabnzbd.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_sabnzbd.php", cache:false, success: function (result) {
       $('#appstat_sabnzbd').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_sabnzbd()}, 1000); };
     }});
@@ -326,7 +326,7 @@ $(document).ready(function() {
 
   // <<-------- SICKGEAR -------->> //
   function appstat_sickgear() {
-    $.ajax({url: "widgets/app_status/app_status_sickgear.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_sickgear.php", cache:false, success: function (result) {
       $('#appstat_sickgear').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_sickgear()}, 1000); };
     }});
@@ -335,7 +335,7 @@ $(document).ready(function() {
 
   // <<-------- sickchill -------->> //
   function appstat_sickchill() {
-    $.ajax({url: "widgets/app_status/app_status_sickchill.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_sickchill.php", cache:false, success: function (result) {
       $('#appstat_sickchill').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_sickchill()}, 1000); };
     }});
@@ -344,7 +344,7 @@ $(document).ready(function() {
 
   // <<-------- SONARR -------->> //
   function appstat_sonarr() {
-    $.ajax({url: "widgets/app_status/app_status_sonarr.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_sonarr.php", cache:false, success: function (result) {
       $('#appstat_sonarr').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_sonarr()}, 1000); };
     }});
@@ -353,7 +353,7 @@ $(document).ready(function() {
 
   // <<-------- SUBSONIC -------->> //
   function appstat_subsonic() {
-    $.ajax({url: "widgets/app_status/app_status_subsonic.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_subsonic.php", cache:false, success: function (result) {
       $('#appstat_subsonic').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_subsonic()}, 1000); };
     }});
@@ -362,7 +362,7 @@ $(document).ready(function() {
 
   // <<-------- SYNCTHING -------->> //
   function appstat_syncthing() {
-    $.ajax({url: "widgets/app_status/app_status_syncthing.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_syncthing.php", cache:false, success: function (result) {
       $('#appstat_syncthing').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_syncthing()}, 1000); };
     }});
@@ -371,7 +371,7 @@ $(document).ready(function() {
 
   // <<-------- WEB CONSOLE -------->> //
   function appstat_webconsole() {
-    $.ajax({url: "widgets/app_status/app_status_webconsole.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_webconsole.php", cache:false, success: function (result) {
       $('#appstat_webconsole').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_webconsole()}, 1000); };
     }});
@@ -380,7 +380,7 @@ $(document).ready(function() {
 
   // <<-------- X2GO -------->> //
   function appstat_x2go() {
-    $.ajax({url: "widgets/app_status/app_status_x2go.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_x2go.php", cache:false, success: function (result) {
       $('#appstat_x2go').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_x2go()}, 1000); };
     }});
@@ -389,7 +389,7 @@ $(document).ready(function() {
 
   // <<-------- ZNC -------->> //
   function appstat_znc() {
-    $.ajax({url: "widgets/app_status/app_status_znc.php", cache:true, success: function (result) {
+    $.ajax({url: "widgets/app_status/app_status_znc.php", cache:false, success: function (result) {
       $('#appstat_znc').html(result);
       if(!GLOBAL.update_hold){ setTimeout(function(){appstat_znc()}, 1000); };
     }});
