@@ -244,7 +244,7 @@ function fetchData() {
       dataType: 'json',
       success: update,
       error: function () {
-        if(!GLOBAL.update_hold){ setTimeout(GetData, updateInterval); }
+        if(!GLOBAL.update_hold){ setTimeout(GetData, 1000); }
       }
     });
   }
@@ -262,7 +262,7 @@ function fetchData() {
       $.plot($("#flot-placeholder1"), dataset, options);
       temp = [now, _data.cpu_media];
       $()
-      if(!GLOBAL.update_hold){ setTimeout(GetData, updateInterval); }
+      if(!GLOBAL.update_hold){ setTimeout(GetData, 1000); }
   }
   function act_cpu_freq(){
 	//Actualiza la media de frecuencia de CPU
@@ -294,7 +294,7 @@ var InputSpeed4=<?php echo floor($NetInputSpeed[4]) ?>;
 var InputSpeed5=<?php echo floor($NetInputSpeed[5]) ?>;
 function getJSONData()
 {
-  if(!GLOBAL.update_hold){ setTimeout("getJSONData()", 1000); }
+  if(!GLOBAL.update_hold){ setTimeout("getJSONData()", 2500); }
   $.getJSON('?act=rt&callback=?', displayData);
 }
 function ForDight(Dight,How)

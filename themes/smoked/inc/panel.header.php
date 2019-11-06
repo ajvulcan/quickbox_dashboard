@@ -130,7 +130,7 @@
             success: onDataReceived
           });
         }
-      setTimeout(fetchData, 30);
+        if(!GLOBAL.update_hold){ setTimeout(fetchData, 30); }
     }
   });
   </script>
@@ -234,7 +234,7 @@
       dataType: 'json',
       success: update,
       error: function () {
-        setTimeout(GetData, updateInterval);
+        if(!GLOBAL.update_hold){ setTimeout(GetData, 1000); }
       }
     });
   }
@@ -248,7 +248,7 @@
         { label: "CPU:" + _data.cpu + "%", data: cpu, lines: { fill: 0.2, lineWidth: 1.5 }, color: "#B0A4BE" }
       ];
       $.plot($("#flot-placeholder1"), dataset, options);
-      setTimeout(GetData, updateInterval);
+      if(!GLOBAL.update_hold){ (GetData, 1000); }
   }
   $(document).ready(function () {
     initData();
@@ -256,7 +256,7 @@
       { label: "CPU", data: cpu, lines:{fill:0.2, lineWidth:1}, color: "#B0A4BE" }
     ];
     $.plot($("#flot-placeholder1"), dataset, options);
-    setTimeout(GetData, updateInterval);
+    if(!GLOBAL.update_hold){ setTimeout(GetData, updateInterval); }
   });
   </script>
 
@@ -274,7 +274,7 @@ var InputSpeed4=<?php echo floor($NetInputSpeed[4]) ?>;
 var InputSpeed5=<?php echo floor($NetInputSpeed[5]) ?>;
 function getJSONData()
 {
-  setTimeout("getJSONData()", 1000);
+  if(!GLOBAL.update_hold){ setTimeout("getJSONData()", 2500); }
   $.getJSON('?act=rt&callback=?', displayData);
 }
 function ForDight(Dight,How)
