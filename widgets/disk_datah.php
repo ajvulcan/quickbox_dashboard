@@ -2,7 +2,6 @@
 include ("/srv/panel/inc/util.php");
 include ($_SERVER['DOCUMENT_ROOT'].'/widgets/class.php');
 require_once ($_SERVER['DOCUMENT_ROOT'].'/inc/localize.php');
-
 $username = getUser();
 function processExists($processName, $username) {
   $exists= false;
@@ -15,7 +14,6 @@ function processExists($processName, $username) {
 $deluged = processExists("deluged",$username);
 $delugedweb = processExists("deluge-web",$username);
 $rtorrent = processExists("rtorrent",$username);
-
 //Unit Conversion
 function formatsize($size) {
   $danwei=array(' B ',' KB ',' MB ',' GB ',' TB ');
@@ -34,7 +32,6 @@ function formatsize($size) {
   }
   return $fsize;
 }
-
 $location = "/home";
 $base = 1024;
 $si_prefix = array( 'b', 'k', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB' );
@@ -44,15 +41,12 @@ $php_self = $_SERVER['PHP_SELF'];
 $web_path = substr($php_self, 0, strrpos($php_self, '/')+1);
 $time = microtime(); $time = explode(" ", $time);
 $time = $time[1] + $time[0]; $start = $time;
-
 if (file_exists('/install/.quota.lock')) {
   $dftotal = shell_exec("sudo /usr/bin/quota -wu ".$username."| tail -n 1 | sed -e 's|^[ \t]*||' | awk '{print $3/1024/1024}'");
   $dfused = shell_exec("sudo /usr/bin/quota -wu ".$username."| tail -n 1 | sed -e 's|^[ \t]*||' | awk '{print $2/1024/1024}'");
   $dffree = sprintf('%0.2f', $dftotal - $dfused);
   $perused = sprintf('%1.0f', $dfused / $dftotal * 100);
-
 } else {
-
   $bytesfree = disk_free_space('/home');
   $class = min((int)log($bytesfree,$base),count($si_prefix) - 1); $bytestotal = disk_total_space($location);
   $class = min((int)log($bytesfree,$base),count($si_prefix) - 1); $bytesused = $bytestotal - $bytesfree;
@@ -76,11 +70,9 @@ if (file_exists('/install/.quota.lock')) {
   $perused = (floatval($dptotal)!=0)?round($dpused/$dptotal*100,2):0;
   //$perused = sprintf('%1.0f', $bytesused / $bytestotal * 100);
 }
-
 if (file_exists('/home/'.$username.'/.sessions/rtorrent.lock')) {
       $rtorrents = shell_exec("ls /home/".$username."/.sessions/*.torrent|wc -l");
 }
-
 ?>
 
                   <p class="nomargin"><?php echo T('FREE'); ?>: <span style="font-weight: 700; position: absolute; left: 100px;"><?php echo "$dffree"; ?> <b>GB</b></span></p>
@@ -116,7 +108,6 @@ if (file_exists('/home/'.$username.'/.sessions/rtorrent.lock')) {
 
 <script type="text/javascript">
 $(function() {
-
   // Knob
   $('.dial-success').knob({
     readOnly: true,
@@ -125,7 +116,6 @@ $(function() {
     fgColor: '#4daf7c',
     inputColor: '#262B36'
   });
-
   $('.dial-warning').knob({
     readOnly: true,
     width: '70px',
@@ -133,7 +123,6 @@ $(function() {
     fgColor: '#e6ad5c',
     inputColor: '#262B36'
   });
-
   $('.dial-danger').knob({
     readOnly: true,
     width: '70px',
@@ -141,7 +130,6 @@ $(function() {
     fgColor: '#D9534F',
     inputColor: '#262B36'
   });
-
   $('.dial-info').knob({
     readOnly: true,
     width: '70px',
@@ -149,6 +137,5 @@ $(function() {
     fgColor: '#fff',
     inputColor: '#fff'
   });
-
 });
 </script>
