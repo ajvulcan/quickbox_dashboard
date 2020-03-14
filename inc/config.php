@@ -603,6 +603,7 @@ case 88:
     } elseif ($process == "plexdrive"){
       shell_exec("sudo /bin/fusermount -u /home/$username/NUBE/PLEXDRIVE");
       shell_exec("sudo systemctl stop $process@$username");
+      shell_exec("sudo systemctl start $process@$username");
     } else {
       shell_exec("sudo systemctl restart $process@$username");
     }
