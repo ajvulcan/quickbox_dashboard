@@ -600,6 +600,9 @@ case 88:
     } elseif ($process == "webmin"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl restart $process");
+    } elseif ($process == "plexdrive"){
+      shell_exec("sudo /bin/fusermount -u /home/$username/NUBE/PLEXDRIVE");
+      shell_exec("sudo systemctl restart $process@$username");
     } else {
       shell_exec("sudo systemctl restart $process@$username");
     }
