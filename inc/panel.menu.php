@@ -39,13 +39,13 @@
                    <!--primer tab-->
                     <div role="tabpanel" class="tab-pane active" id="idioma">
 
-                    <ul class="list-group">
+                      <ul class="list-group">
                         <li class="list-group-item">
                           <div class="row" style="margin-left: -15px; margin-right: -15px; text-align: center;">
 
-                          <h5><?php echo T('LANG_SELECT'); ?></h5>
+                              <h5><?php echo T('LANG_SELECT'); ?></h5>
 
-                    <div class="col-xs-12" style="padding: 0;display:inline-table">
+                              <div class="col-xs-12" style="padding: 0;display:inline-table">
                                 <?php $language = array();
                                     $language[] = array('file' => 'lang_es', 'title' =>'Spanish');
                                     $language[] = array('file' => 'lang_dk', 'title' =>'Danish');
@@ -59,16 +59,7 @@
                                 <?php } ?>
                               </div>
 
-                        </div>
-                        </li>
-                        </ul>
-
-                    </div><!-- tab-pane -->
-
-                    <div role="tabpanel" class="tab-pane" id="tema">
-                      <ul class="list-group">
-                        <li class="list-group-item">
-                          
+                           </div>
                         </li>
                       </ul>
 
@@ -135,6 +126,9 @@
             <?php if (file_exists('/install/.filebrowser.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$filebrowserURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/filebrowser.png" class="brand-ico"> <span>Filebrowser</span></a></li>
               <?php } ?>
+            <?php if (file_exists('/install/.jellyfin.lock')) { ?>
+              <li><a class="grayscale" href="<?php echo "$jellyfinURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\jellyfin.png" class="brand-ico"> <span>Jellyfin</span></a></li>
+            <?php } ?>
 
             <?php if ($username == "$master") { ?>              
               <?php if (processExistsOther("resilio-sync","rslsync") && file_exists('/install/.btsync.lock')) { ?>
@@ -234,7 +228,7 @@
             </li>
             <?php } ?>
             <?php if (processExistsOther("shellinabox","shellinabox") && ($username == "$master")) { ?>
-            <li><a href="/shell" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\shellinabox.png" class="brand-ico"> <span><?php echo T('WEB_CONSOLE'); ?></span></a></li>
+            <li><a class="grayscale" href="/shell" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\shellinabox.png" class="brand-ico"> <span><?php echo T('WEB_CONSOLE'); ?></span></a></li>
             <?php } ?>
             <!-- /// BEGIN INSERT CUSTOM MENU /// -->
             <?php include ($_SERVER['DOCUMENT_ROOT'].'/custom/custom.menu.php'); ?>
