@@ -316,7 +316,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   include ($_SERVER['DOCUMENT_ROOT'].'/custom/url.override.php');
   // END CUSTOM URL OVERRIDES ////
 } else {
-  $jellyfin = "https://" . $_SERVER['HTTP_HOST'] . "/jellyfin";
+  $jellyfinURL = "https://" . $_SERVER['HTTP_HOST'] . "/jellyfin";
   $webminURL = "https://" . $_SERVER['HTTP_HOST'] . ":10000/";
   $bazarrURL = "https://" . $_SERVER['HTTP_HOST'] . "/bazarr";
   $btsyncURL = "http://" . $_SERVER['HTTP_HOST'] . ":8888/gui/";
