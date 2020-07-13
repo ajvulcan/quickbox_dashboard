@@ -234,7 +234,7 @@
             </li>
             <?php } ?>
             <?php if (processExistsOther("shellinabox","shellinabox") && ($username == "$master")) { ?>
-            <li><a href="/shell" target="iFrame" onclick="abre_frame(false)"><i class="fa fa-keyboard-o"></i> <span><?php echo T('WEB_CONSOLE'); ?></span></a></li>
+            <li><a href="/shell" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\shellinabox.png" class="brand-ico"> <span><?php echo T('WEB_CONSOLE'); ?></span></a></li>
             <?php } ?>
             <!-- /// BEGIN INSERT CUSTOM MENU /// -->
             <?php include ($_SERVER['DOCUMENT_ROOT'].'/custom/custom.menu.php'); ?>
