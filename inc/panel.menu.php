@@ -32,15 +32,12 @@
                   <!-- Nav tabs -->
                   <ul class="nav nav-tabs nav-justified" role="tablist">
                     <li class="active"><a data-target="#idioma" data-toggle="tab">Idioma</a></li>
-                    <li><a data-target="#chat" data-toggle="tab">Chat</a></li>
-                    <li><a data-target="#tema" data-toggle="tab">Tema</a></li>
                   </ul>
 
                   <!-- Tab panes -->
                   <div class="tab-content" style="width: 200px;">
                    <!--primer tab-->
                     <div role="tabpanel" class="tab-pane active" id="idioma">
-
 
                     <ul class="list-group">
                         <li class="list-group-item">
@@ -68,41 +65,10 @@
 
                     </div><!-- tab-pane -->
 
-                    <div role="tabpanel" class="tab-pane" id="chat">
-                      <ul class="list-group notice-list" style="margin: 0;">
-                        <li class="list-group-item" style="padding-top: 20px;">
-                          <div class="row">
-                            <div class="col-xs-2">
-                              <i class="fa fa-comment"></i>
-                            </div>
-                            <div class="col-xs-10">
-                              <h5><?php echo T('JOIN_US_TXT'); ?></h5>
-                              <small style="color:#fff"><strong style="color: #4CD4B0">host:</strong> irc.swizzin.ltd +6697</small>
-                              <small style="color:#fff"><strong style="color: #4CD4B0">chan:</strong> #swizzin</small>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div><!-- tab-pane -->
-
                     <div role="tabpanel" class="tab-pane" id="tema">
                       <ul class="list-group">
                         <li class="list-group-item">
-                          <div class="row" style="margin-left: -15px; margin-right: -15px; text-align: center;">
-                            <h5><?php echo T('THEME_SELECT'); ?></h5>
-                              <div class="col-xs-12" style="text-align: center;">                     
-                              
-                              <?php $option = array();
-                              $option[] = array('file' => 'defaulted', 'title' =>'Defaulted');
-                              $option[] = array('file' => 'smoked', 'title' =>'Smoked'); { ?>
-                                
-                                <?php foreach($option as $theme) { ?>
-                                  <small style="display: inline-table; padding: 3px;"><a href="javascript:void()" data-toggle="modal" data-target="#themeSelect<?php echo $theme['file'] ?>Confirm"><img class='lang-flag' src='img/themes/opt_<?php echo $theme['file'] ?>.png' /><?php echo $theme['title'] ?></a></small>
-                                <?php } ?>
-                              <?php } ?>
-                             
-                            </div>
-                          </div>
+                          
                         </li>
                       </ul>
 
