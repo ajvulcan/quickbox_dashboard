@@ -130,7 +130,10 @@
               <li><a class="grayscale" href="<?php echo "$jellyfinURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\jellyfin.png" class="brand-ico"> <span>Jellyfin</span></a></li>
             <?php } ?>
 
-            <?php if ($username == "$master") { ?>              
+            <?php if ($username == "$master") { ?>  
+              <?php if (file_exists('/install/.librespeed.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$librespeedURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\librespeed.png" class="brand-ico"> <span>LibreSpeed</span></a></li>
+              <?php } ?>            
               <?php if (processExistsOther("resilio-sync","rslsync") && file_exists('/install/.btsync.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$btsyncURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/btsync.png" class="brand-ico"> <span>BTSync</span></a></li>
               <?php } ?>
