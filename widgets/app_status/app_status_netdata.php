@@ -5,7 +5,7 @@ $username = getUser();
 
 function processExists($processName, $username) {
   $exists= false;
-  exec("ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm,cmd|grep $username | grep -iE $processName | grep -v grep", $pids);
+  exec("ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm,cmd | grep $username | grep -iE $processName | grep -v grep", $pids);
   if (count($pids) > 0) {
     $exists = true;
   }
@@ -14,7 +14,7 @@ function processExists($processName, $username) {
 
 $netdata = processExists("netdata","netdata");
 
-	if ($netdata == "1") { $netval = "<span class=\"badge badge-service-running-dot\"></span><span class=\"badge badge-service-running-pulse\"></span>";
+	if ($netdata) { $netval = "<span class=\"badge badge-service-running-dot\"></span><span class=\"badge badge-service-running-pulse\"></span>";
 } else { $netval = "<span class=\"badge badge-service-disabled-dot\"></span><span class=\"badge badge-service-disabled-pulse\"></span>";
 }
 
