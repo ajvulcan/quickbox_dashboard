@@ -129,6 +129,9 @@
             <?php if (file_exists('/install/.jellyfin.lock')) { ?>
               <li><a class="grayscale" href="<?php echo "$jellyfinURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\jellyfin.png" class="brand-ico"> <span>Jellyfin</span></a></li>
             <?php } ?>
+            <?php if (file_exists('/install/.transmission.lock')) { ?>
+              <li><a class="grayscale" href="<?php echo "$transmissionURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img\brands\transmission.png" class="brand-ico"> <span>Transmission</span></a></li>
+            <?php } ?>
 
             <?php if ($username == "$master") { ?>  
               <?php if (file_exists('/install/.librespeed.lock')) { ?>
