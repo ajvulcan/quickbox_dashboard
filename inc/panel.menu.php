@@ -111,11 +111,8 @@
             <?php if (processExists("deluge-web",$userRunning) && file_exists('/install/.deluge.lock')) { ?>
               <li><a class="grayscale" href="<?php echo "$dwURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/deluge.png" class="brand-ico"> <span>Deluge Web</span></a></li>
             <?php } ?>
-            <?php if (file_exists('/install/.nzbget.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$nzbgetURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/nzbget.png" class="brand-ico"> <span>NZBGet</span></a></li>
-            <?php } ?>
-            <?php if (processExistsOther("lounge","lounge") && file_exists('/install/.lounge.lock')) { ?>
-              <li><a class="grayscale" href="<?php echo "$loungeURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/lounge.svg" class="brand-ico"> <span>The Lounge</span></a></li>
+            <?php if (file_exists('/install/.transmission.lock')) { ?>
+              <li><a class="grayscale" href="<?php echo "$transmissionURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\transmission.png" class="brand-ico"> <span>Transmission</span></a></li>
             <?php } ?>
             <?php if (file_exists('/install/.emby.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$embyURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/emby.png" class="brand-ico"> <span>Emby</span></a></li>
@@ -123,17 +120,23 @@
             <?php if (file_exists('/install/.plex.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$plexURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/plex.png" class="brand-ico"> <span>Plex</span></a></li>
               <?php } ?>
+              <?php if (file_exists('/install/.jellyfin.lock')) { ?>
+              <li><a class="grayscale" href="<?php echo "$jellyfinURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\jellyfin.png" class="brand-ico"> <span>Jellyfin</span></a></li>
+            <?php } ?>
+            <?php if (file_exists('/install/.nzbget.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$nzbgetURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/nzbget.png" class="brand-ico"> <span>NZBGet</span></a></li>
+            <?php } ?>
+            <?php if (processExistsOther("lounge","lounge") && file_exists('/install/.lounge.lock')) { ?>
+              <li><a class="grayscale" href="<?php echo "$loungeURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/lounge.svg" class="brand-ico"> <span>The Lounge</span></a></li>
+            <?php } ?>
             <?php if (file_exists('/install/.filebrowser.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$filebrowserURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/filebrowser.png" class="brand-ico"> <span>Filebrowser</span></a></li>
               <?php } ?>
-            <?php if (file_exists('/install/.jellyfin.lock')) { ?>
-              <li><a class="grayscale" href="<?php echo "$jellyfinURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\jellyfin.png" class="brand-ico"> <span>Jellyfin</span></a></li>
-            <?php } ?>
-            <?php if (file_exists('/install/.transmission.lock')) { ?>
-              <li><a class="grayscale" href="<?php echo "$transmissionURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img\brands\transmission.png" class="brand-ico"> <span>Transmission</span></a></li>
-            <?php } ?>
 
             <?php if ($username == "$master") { ?>  
+              <?php if (file_exists('/install/.organizr.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$organizrURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\organizr.png" class="brand-ico"> <span>Organizr</span></a></li>
+              <?php } ?>
               <?php if (file_exists('/install/.librespeed.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$librespeedURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\librespeed.png" class="brand-ico"> <span>LibreSpeed</span></a></li>
               <?php } ?>            
@@ -149,11 +152,6 @@
               <?php if (file_exists('/install/.csf.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$csfURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/csf.png" class="brand-ico"> <span>CSF (firewall)</span></a></li>
               <?php } ?>
-
-              <?php if (file_exists('/install/.webmin.lock')) { ?>
-               <li><a class="grayscale" href="<?php echo "$webminURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/webmin.png" class="brand-ico"> <span>Webmin</span></a></li>              
-              <?php } ?>
-
               <?php if (file_exists('/install/.headphones.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$headphonesURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/headphones.png" class="brand-ico"> <span>Headphones</span></a></li>
               <?php } ?>
@@ -165,9 +163,6 @@
               <?php } ?>
               <?php if (processExists("medusa",$userRunning) && file_exists('/install/.medusa.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$medusaURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/medusa.png" class="brand-ico"> <span>Medusa</span></a></li>
-              <?php } ?>
-              <?php if (file_exists('/install/.netdata.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$netdataURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/netdata.png" class="brand-ico"> <span>Netdata</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.nextcloud.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$nextcloudURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/nextcloud.png" class="brand-ico"> <span>NextCloud</span></a></li>
@@ -210,7 +205,15 @@
               <?php } ?>
               <?php if (file_exists('/install/.znc.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$zncURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/znc.png" class="brand-ico"> <span>ZNC</span></a></li>
+              <?php } ?>                     
+              <?php if (file_exists('/install/.netdata.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$netdataURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img/brands/netdata.png" class="brand-ico"> <span>Netdata</span></a></li>
+              <?php } ?>       
+
+              <?php if (file_exists('/install/.webmin.lock')) { ?>
+               <li><a class="grayscale" href="<?php echo "$webminURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/webmin.png" class="brand-ico"> <span>Webmin</span></a></li>              
               <?php } ?>
+
             <?php } ?>
             <?php if (file_exists('/install/.rtorrent.lock') || file_exists('/install/.deluge.lock') || file_exists('/install/.flood.lock')) { ?>
             <li class="nav-parent">
