@@ -320,7 +320,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $transmissionURL = "https://" . $_SERVER['HTTP_HOST'] . "/transmission/web/";
   $librespeedURL = "https://" . $_SERVER['HTTP_HOST'] . "/librespeed";
   $jellyfinURL = "https://" . $_SERVER['HTTP_HOST'] . "/jellyfin";
-  $webminURL = "https://" . $_SERVER['HTTP_HOST'] . ":10000/";
+  $webminURL = "https://" . $_SERVER['HTTP_HOST'] . "/webmin";
   $bazarrURL = "https://" . $_SERVER['HTTP_HOST'] . "/bazarr";
   $btsyncURL = "http://" . $_SERVER['HTTP_HOST'] . ":8888/gui/";
   $cpURL = "https://" . $_SERVER['HTTP_HOST'] . "/couchpotato";
