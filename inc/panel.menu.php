@@ -118,7 +118,7 @@
                 <li><a class="grayscale" href="<?php echo "$embyURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/emby.png" class="brand-ico"> <span>Emby</span></a></li>
             <?php } ?>
             <?php if (file_exists('/install/.plex.lock')) { ?>
-                <li><a class="grayscale" href="<?php echo "$plexURL"; ?>" target="iFrame" onclick="abre_frame(true)"><img src="img/brands/plex.png" class="brand-ico"> <span>Plex</span></a></li>
+                <li><a class="grayscale" href="<?php echo "$plexURL"; ?>" target="_self" onclick="abre_frame(true)"><img src="img/brands/plex.png" class="brand-ico"> <span>Plex</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.jellyfin.lock')) { ?>
               <li><a class="grayscale" href="<?php echo "$jellyfinURL"; ?>" target="iFrame" onclick="abre_frame(false)"><img src="img\brands\jellyfin.png" class="brand-ico"> <span>Jellyfin</span></a></li>
