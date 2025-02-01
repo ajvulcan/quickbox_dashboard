@@ -337,7 +337,8 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $nextcloudURL = "https://" . $_SERVER['HTTP_HOST'] . "/nextcloud";
   $nzbgetURL = "https://" . $_SERVER['HTTP_HOST'] . "/nzbget";
   $nzbhydraURL = "https://" . $_SERVER['HTTP_HOST'] . "/nzbhydra";
-  $plexURL = "https://" . $_SERVER['HTTP_HOST'] . ":32400/web/";
+  //$plexURL = "https://" . $_SERVER['HTTP_HOST'] . ":32400/web/";
+  $plexURL = "https://app.plex.tv/desktop";
   $tautulliURL = "https://" . $_SERVER['HTTP_HOST'] . "/tautulli";
   $ombiURL = "https://" . $_SERVER['HTTP_HOST'] . "/ombi";
   $pyloadURL = "https://" . $_SERVER['HTTP_HOST'] . "/pyload/login";
